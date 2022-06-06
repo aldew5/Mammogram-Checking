@@ -2,7 +2,7 @@ import Menu from "../components/Menu";
 
 const Landing = () => {
     return (
-        <div>
+        <div style={{padding: "50px"}}>
             <Menu />
         </div>
     )
