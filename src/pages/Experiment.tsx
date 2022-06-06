@@ -1,10 +1,16 @@
 import Image from "../components/Image";
+import Cat from "../assets/cat.jpeg";
+import Dog from "../assets/dog.jpeg";
 import Selection from "../components/Selection";
+import Completion from "../components/Completion";
 import { useState, useEffect } from "react";
 
 const Experiment = () => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
+    const [index, setIndex] = useState<number>(0);
+
+    const images: any = [Cat, Dog];
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -15,12 +21,20 @@ const Experiment = () => {
 
     return (
         <div style={{ marginTop: "100px" }}>
-            {(displayImage) ?
-                <Image />
-                :
-                <Selection 
-                    setDisplayImage={setDisplayImage}
-                />
+            {(index < images.length) ?
+                <div>
+                    {(displayImage) ?
+                        <Image
+                            index={index}
+                            setIndex={setIndex}
+                            images={images}
+                        />
+                        :
+                        <Selection
+                            setDisplayImage={setDisplayImage}
+                        />
+                    }
+                </div> : <Completion />
             }
         </div>
     )
