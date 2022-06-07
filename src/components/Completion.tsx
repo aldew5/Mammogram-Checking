@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { User } from "../interfaces/user";
 
 interface CompletionProps {
@@ -8,6 +8,8 @@ interface CompletionProps {
 }
 
 const Completion = ({ user, sureness, willingness }: CompletionProps) => {
+
+    const [complete, setComplete] = useState<boolean>(false);
 
     const completeTrials = async () => {
 
@@ -25,8 +27,11 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
     }
 
     useEffect(() => {
-        completeTrials();
-    }, [])
+        if (!complete){
+            completeTrials();
+            setComplete(true);
+        }
+    }, []);
 
     return (
         <div>
