@@ -24,29 +24,29 @@ interface Mark {
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     willingnessList, surenessList }: SelectionProps) => {
 
-    const [willingness, setWillingness] = useState<number>(0);
-    const [sureness, setSureness] = useState<number>(0);
-
+    const [willingness, setWillingness] = useState<number>(5);
+    const [sureness, setSureness] = useState<number>(4);
 
     function valueText(value: number) {
         return `${value}`
     }
 
     const handleChange1 = (event: Event, new_value: number | number[]) => {
-        if (Array.isArray(new_value)){
+        if (Array.isArray(new_value)) {
             return;
         }
 
-        if (new_value !== sureness){
+        if (new_value !== sureness) {
             setSureness(new_value);
         }
     }
+
     const handleChange2 = (event: Event, new_value: number | number[]) => {
-        if (Array.isArray(new_value)){
+        if (Array.isArray(new_value)) {
             return;
         }
 
-        if (new_value !== willingness){
+        if (new_value !== willingness) {
             setWillingness(new_value);
         }
     }

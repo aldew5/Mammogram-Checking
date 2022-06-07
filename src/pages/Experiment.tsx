@@ -10,7 +10,7 @@ interface ExperimentProps {
     user: User;
 }
 
-const Experiment = ({user}: ExperimentProps) => {
+const Experiment = ({ user }: ExperimentProps) => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
     const [index, setIndex] = useState<number>(0);
@@ -45,9 +45,9 @@ const Experiment = ({user}: ExperimentProps) => {
                             setSurenessList={setSurenessList}
                         />
                     }
-                </div> : 
-                
-                <Completion 
+                </div>
+                :
+                <Completion
                     user={user}
                     sureness={surenessList}
                     willingness={willingnessList}

@@ -7,10 +7,10 @@ interface CompletionProps {
     willingness: number[]
 }
 
-const Completion = ({user, sureness, willingness}: CompletionProps) => {
-    
+const Completion = ({ user, sureness, willingness }: CompletionProps) => {
+
     const completeTrials = async () => {
-        
+
         const request = await fetch(`${process.env.REACT_APP_API_URL}/saveTrial`, {
             method: "POST",
             headers: {

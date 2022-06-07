@@ -10,7 +10,7 @@ interface MenuProps {
     setUser: Dispatch<SetStateAction<User>>;
 }
 
-const Menu = ({setUser}: MenuProps) => {
+const Menu = ({ setUser }: MenuProps) => {
 
     const [age, setAge] = useState<string>("");
     const [gender, setGender] = useState<string>("");
@@ -43,7 +43,7 @@ const Menu = ({setUser}: MenuProps) => {
     }
 
     return (
-        <Card sx={{ textAlign: "left", borderStyle: "solid", maxWidth:"700px" }}>
+        <Card sx={{ textAlign: "left", borderStyle: "solid", maxWidth: "700px" }}>
             <CardContent>
                 <div style={{ textAlign: "center" }}>
                     <Typography variant="h6"><b>Please fill out the following form:</b></Typography>

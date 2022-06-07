@@ -6,7 +6,6 @@ interface LandingProps {
     setUser: Dispatch<SetStateAction<User>>;
 }
 
-
 const Landing = ({ setUser }: LandingProps) => {
 
     return (

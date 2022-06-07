@@ -3,7 +3,7 @@ import {
     SetStateAction,
     useEffect
 }
-from "react";
+    from "react";
 
 interface ImageProps {
     index: number;
@@ -13,7 +13,7 @@ interface ImageProps {
 
 let image_index: number;
 
-const Image = ({index, images, setIndex}: ImageProps) => {
+const Image = ({ index, images, setIndex }: ImageProps) => {
 
     useEffect(() => {
         image_index = index;
@@ -22,9 +22,9 @@ const Image = ({index, images, setIndex}: ImageProps) => {
 
     return (
         <div>
-            <img src={images[image_index]} alt="not found" width="500px"/>
+            <img src={images[image_index]} alt="not found" width="500px" />
         </div>
     )
-}   
+}
 
 export default Image;
