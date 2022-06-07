@@ -9,11 +9,12 @@ const Experiment = () => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
     const [index, setIndex] = useState<number>(0);
+    const [surenessList, setSurenessList] = useState<number[]>([]);
+    const [willingnessList, setWillingnessList] = useState<number[]>([]);
 
     const images: any = [Cat, Dog];
 
     useEffect(() => {
-        console.log(index);
         const timer = setTimeout(() => {
             setDisplayImage(false);
         }, 5000);
@@ -22,7 +23,7 @@ const Experiment = () => {
 
     return (
         <div style={{ marginTop: "100px" }}>
-            {(index < images.length && !displayImage) ?
+            {(index <= images.length) ?
                 <div>
                     {(displayImage) ?
                         <Image
@@ -33,6 +34,10 @@ const Experiment = () => {
                         :
                         <Selection
                             setDisplayImage={setDisplayImage}
+                            willingnessList={willingnessList}
+                            setWillingnessList={setWillingnessList}
+                            surenessList={surenessList}
+                            setSurenessList={setSurenessList}
                         />
                     }
                 </div> : <Completion />
