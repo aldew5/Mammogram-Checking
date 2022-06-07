@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import { useNavigate } from "react-router-dom";
+import { User } from "../interfaces/user";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const Menu = () => {
+interface MenuProps {
+    setUser: Dispatch<SetStateAction<User>>;
+}
+
+const Menu = ({setUser}: MenuProps) => {
 
     const [age, setAge] = useState<string>("");
     const [gender, setGender] = useState<string>("");
@@ -19,6 +24,23 @@ const Menu = () => {
     const [models, setModels] = useState<string>("");
 
     const navigate = useNavigate();
+
+    const handleClick = () => {
+        const user: User = {
+            age,
+            gender,
+            specialty,
+            location,
+            mammo_number: mammo,
+            screening_number: screening,
+            years,
+            setting,
+            program,
+            models
+        }
+        setUser(user);
+        navigate("/experiment");
+    }
 
     return (
         <Card sx={{ textAlign: "left", borderStyle: "solid", maxWidth:"700px" }}>
@@ -88,7 +110,7 @@ const Menu = () => {
                             style={{ marginBottom: "2rem" }}
                         /><br />
                         <div style={{ textAlign: "center" }}>
-                            <Button variant="contained" onClick={() => { navigate("/experiment") }}>
+                            <Button variant="contained" onClick={handleClick}>
                                 Submit
                             </Button>
                         </div>

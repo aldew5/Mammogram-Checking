@@ -4,8 +4,13 @@ import Dog from "../assets/dog.jpeg";
 import Selection from "../components/Selection";
 import Completion from "../components/Completion";
 import { useState, useEffect } from "react";
+import { User } from "../interfaces/user";
 
-const Experiment = () => {
+interface ExperimentProps {
+    user: User;
+}
+
+const Experiment = ({user}: ExperimentProps) => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
     const [index, setIndex] = useState<number>(0);
@@ -40,7 +45,13 @@ const Experiment = () => {
                             setSurenessList={setSurenessList}
                         />
                     }
-                </div> : <Completion />
+                </div> : 
+                
+                <Completion 
+                    user={user}
+                    sureness={surenessList}
+                    willingness={willingnessList}
+                />
             }
         </div>
     )
