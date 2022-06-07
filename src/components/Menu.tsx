@@ -4,7 +4,6 @@ import { User } from "../interfaces/user";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import styles from "../styles/Menu.module.css";
 
 interface MenuProps {
@@ -40,7 +39,7 @@ const Menu = ({ setUser }: MenuProps) => {
             models
         }
         setUser(user);
-        navigate("/experiment");
+        navigate("/instructions");
     }
 
     return (
