@@ -27,7 +27,7 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
     }
 
     useEffect(() => {
-        if (!complete){
+        if (!complete) {
             completeTrials();
             setComplete(true);
         }
