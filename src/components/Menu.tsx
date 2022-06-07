@@ -21,7 +21,7 @@ const Menu = () => {
     const navigate = useNavigate();
 
     return (
-        <Card sx={{ textAlign: "left", borderStyle: "solid" }}>
+        <Card sx={{ textAlign: "left", borderStyle: "solid", maxWidth:"700px" }}>
             <CardContent>
                 <div style={{ textAlign: "center" }}>
                     <Typography variant="h6"><b>Please fill out the following form:</b></Typography>
@@ -52,13 +52,13 @@ const Menu = () => {
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="mammo_number">How many mammo cases do you read each year? </label><br />
+                        <label htmlFor="mammo_number">How many mammogram cases do you read each year? </label><br />
                         <input type="text" id="mammo_number"
                             value={mammo} onChange={(e) => { setMammo(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="screening_number">Age: </label><br />
+                        <label htmlFor="screening_number">Number of screening cases per year? </label><br />
                         <input type="text" id="screening_number"
                             value={screening} onChange={(e) => { setScreening(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
@@ -85,7 +85,7 @@ const Menu = () => {
                         <label htmlFor="models">Do you work with any AI mammography product currently? Which one(s)? </label><br />
                         <input type="text" id="models"
                             value={models} onChange={(e) => { setModels(e.target.value) }}
-                            style={{ marginBottom: "1.5rem" }}
+                            style={{ marginBottom: "2rem" }}
                         /><br />
                         <div style={{ textAlign: "center" }}>
                             <Button variant="contained" onClick={() => { navigate("/experiment") }}>

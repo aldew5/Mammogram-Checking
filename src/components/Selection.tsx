@@ -51,8 +51,8 @@ const Selection = ({ setDisplayImage }: SelectionProps) => {
                     </div>
                     <Box>
                         <Slider
-                            aria-label="Temperature"
-                            defaultValue={30}
+                            aria-label="Labelling"
+                            defaultValue={5}
                             getAriaValueText={valueText}
                             valueLabelDisplay="auto"
                             step={1}
@@ -71,8 +71,8 @@ const Selection = ({ setDisplayImage }: SelectionProps) => {
                     </div>
                     <Box>
                         <Slider
-                            aria-label="Temperature"
-                            defaultValue={30}
+                            aria-label="Willing"
+                            defaultValue={4}
                             getAriaValueText={valueText}
                             valueLabelDisplay="auto"
                             step={1}

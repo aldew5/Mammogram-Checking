@@ -13,6 +13,7 @@ const Experiment = () => {
     const images: any = [Cat, Dog];
 
     useEffect(() => {
+        console.log(index);
         const timer = setTimeout(() => {
             setDisplayImage(false);
         }, 5000);
@@ -21,7 +22,7 @@ const Experiment = () => {
 
     return (
         <div style={{ marginTop: "100px" }}>
-            {(index < images.length) ?
+            {(index < images.length && !displayImage) ?
                 <div>
                     {(displayImage) ?
                         <Image
