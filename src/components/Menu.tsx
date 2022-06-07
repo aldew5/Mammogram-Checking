@@ -56,55 +56,55 @@ const Menu = ({ setUser }: MenuProps) => {
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="gender">Gender: </label><br />
+                        <label htmlFor="gender">Gender: </label>
                         <input type="text" id="gender"
                             value={gender} onChange={(e) => { setGender(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="location">Where do you work? </label><br />
+                        <label htmlFor="location">Where do you work? </label>
                         <input type="text" id="location"
                             value={location} onChange={(e) => { setLocation(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="specialty">Sub-specialty, if any? </label><br />
+                        <label htmlFor="specialty">Sub-specialty, if any? </label>
                         <input type="text" id="specialty"
                             value={specialty} onChange={(e) => { setSpecialty(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="mammo_number">How many mammogram cases do you read each year? </label><br />
+                        <label htmlFor="mammo_number">How many mammogram cases do you read each year? </label>
                         <input type="text" id="mammo_number"
                             value={mammo} onChange={(e) => { setMammo(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="screening_number">Number of screening cases per year? </label><br />
+                        <label htmlFor="screening_number">Number of screening cases per year? </label>
                         <input type="text" id="screening_number"
                             value={screening} onChange={(e) => { setScreening(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="years">How many years have you been a radiologist? </label><br />
+                        <label htmlFor="years">How many years have you been a radiologist? </label>
                         <input type="text" id="years"
                             value={years} onChange={(e) => { setYears(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="setting">In what setting do you read (academic, community, etc.)? </label><br />
+                        <label htmlFor="setting">In what setting do you read (academic, community, etc.)? </label>
                         <input type="text" id="setting"
                             value={setting} onChange={(e) => { setSetting(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="program">Do you work in a regional or national screening program? </label><br />
+                        <label htmlFor="program">Do you work in a regional or national screening program? </label>
                         <input type="text" id="program"
                             value={program} onChange={(e) => { setProgram(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="models">Do you work with any AI mammography product currently? Which one(s)? </label><br />
+                        <label htmlFor="models">Do you work with any AI mammography product currently? Which one(s)? </label>
                         <input type="text" id="models"
                             value={models} onChange={(e) => { setModels(e.target.value) }}
                             style={{ marginBottom: "2rem" }}
