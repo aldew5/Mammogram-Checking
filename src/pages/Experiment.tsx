@@ -55,7 +55,6 @@ const Experiment = ({ user }: ExperimentProps) => {
             }
         </div>
     )
-
 }
 
 export default Experiment;
