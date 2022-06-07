@@ -5,6 +5,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import styles from "../styles/Menu.module.css";
 
 interface MenuProps {
     setUser: Dispatch<SetStateAction<User>>;
@@ -43,14 +44,14 @@ const Menu = ({ setUser }: MenuProps) => {
     }
 
     return (
-        <Card sx={{ textAlign: "left", borderStyle: "solid", maxWidth: "700px" }}>
+        <Card className={styles.form_style_2}>
             <CardContent>
-                <div style={{ textAlign: "center" }}>
-                    <Typography variant="h6"><b>Please fill out the following form:</b></Typography>
+                <div className={styles.form_style_2_heading}>
+                    <h3>User Information</h3>
                 </div>
-                <div style={{ margin: "50px" }}>
+                <div style={{textAlign: 'left'}}>
                     <form>
-                        <label htmlFor="age"><Typography>Age:</Typography></label>
+                        <label htmlFor="age">Age:</label>
                         <input type="text" id="age"
                             value={age} onChange={(e) => { setAge(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
