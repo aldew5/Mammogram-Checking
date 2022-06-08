@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import Cat from "../assets/cat.jpeg";
 import { useNavigate } from "react-router-dom";
+import styles from "../styles/Instructions.module.css";
 
 const Instructions = () => {
 
@@ -8,11 +9,8 @@ const Instructions = () => {
 
     return (
         <div>
-            <p style={{ paddingTop: "5rem", fontSize: "30px" }}>Instructions:</p>
-            <p style={{
-                textAlign: "left",
-                paddingLeft: "3rem", paddingRight: "3rem", fontSize: "24px"
-            }}>
+            <p className={styles.title}>Instructions:</p>
+            <p className={styles.text}>
                 Upon starting the experiment, you will be presented with a series of
                 MLO mammograms some of which show an abnormality. After 5 seconds of viewing time,
                 you will be asked to rank how certain you are the the mammogram is normal on a scale

@@ -1,6 +1,7 @@
 import Menu from "../components/Menu";
 import { Dispatch, SetStateAction } from "react";
 import { User } from "../interfaces/user";
+import styles from "../styles/Landing.module.css";
 
 interface LandingProps {
     setUser: Dispatch<SetStateAction<User>>;
@@ -9,7 +10,7 @@ interface LandingProps {
 const Landing = ({ setUser }: LandingProps) => {
 
     return (
-        <div style={{ padding: "50px", margin: "0 auto", marginLeft: "350px" }}>
+        <div className={styles.main}>
             <Menu
                 setUser={setUser}
             />
