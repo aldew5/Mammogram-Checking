@@ -6,6 +6,7 @@ import {
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 
 interface SelectionProps {
@@ -14,6 +15,8 @@ interface SelectionProps {
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
     willingnessList: number[];
     surenessList: number[];
+    index: number;
+    length: number;
 }
 
 interface Mark {
@@ -22,10 +25,12 @@ interface Mark {
 }
 
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
-    willingnessList, surenessList }: SelectionProps) => {
+    willingnessList, surenessList, index, length }: SelectionProps) => {
 
     const [willingness, setWillingness] = useState<number>(5);
     const [sureness, setSureness] = useState<number>(4);
+
+    const navigate = useNavigate();
 
     function valueText(value: number) {
         return `${value}`
@@ -61,6 +66,10 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
         let sure: number[] = surenessList;
         sure.push(sureness);
         setSurenessList(sure);
+
+        if (index >= length) {
+            navigate("/completion");
+        }
     }
 
     const labelling_marks: Mark[] = [

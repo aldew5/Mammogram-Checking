@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { User } from "../interfaces/user";
 
 interface CompletionProps {
@@ -9,10 +9,7 @@ interface CompletionProps {
 
 const Completion = ({ user, sureness, willingness }: CompletionProps) => {
 
-    const [complete, setComplete] = useState<boolean>(false);
-
     const completeTrials = async () => {
-
         const request = await fetch(`${process.env.REACT_APP_API_URL}/saveTrial`, {
             method: "POST",
             headers: {
@@ -27,10 +24,8 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
     }
 
     useEffect(() => {
-        if (!complete) {
-            completeTrials();
-            setComplete(true);
-        }
+        console.log("HERE");
+        completeTrials();
     }, []);
 
     return (
