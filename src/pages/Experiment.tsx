@@ -2,9 +2,7 @@ import Image from "../components/Image";
 import Cat from "../assets/cat.jpeg";
 import Dog from "../assets/dog.jpeg";
 import Selection from "../components/Selection";
-import Completion from "./Completion";
 import { useState, useEffect } from "react";
-import { User } from "../interfaces/user";
 import { Dispatch, SetStateAction } from "react";
 
 interface ExperimentProps {
