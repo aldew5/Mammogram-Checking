@@ -5,14 +5,16 @@ import styles from "../styles/Landing.module.css";
 
 interface LandingProps {
     setUser: Dispatch<SetStateAction<User>>;
+    checked: boolean;
 }
 
-const Landing = ({ setUser }: LandingProps) => {
+const Landing = ({ setUser, checked }: LandingProps) => {
 
     return (
         <div className={styles.main}>
             <Menu
                 setUser={setUser}
+                checked={checked}
             />
         </div>
     )

@@ -1,0 +1,8 @@
+.terms {
+    overflow-y: scroll;
+    height: 500px;
+    width: 75%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-style: solid;
+}

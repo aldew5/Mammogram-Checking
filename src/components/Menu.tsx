@@ -5,12 +5,15 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import styles from "../styles/Menu.module.css";
+import Alert from '@mui/material/Alert';
+
 
 interface MenuProps {
     setUser: Dispatch<SetStateAction<User>>;
+    checked: boolean;
 }
 
-const Menu = ({ setUser }: MenuProps) => {
+const Menu = ({ setUser, checked }: MenuProps) => {
 
     const [age, setAge] = useState<string>("");
     const [gender, setGender] = useState<string>("");
@@ -23,6 +26,7 @@ const Menu = ({ setUser }: MenuProps) => {
     const [program, setProgram] = useState<string>("");
     const [models, setModels] = useState<string>("");
     const [email, setEmail] = useState<string>("");
+    const [showError, setShowError] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
@@ -41,7 +45,11 @@ const Menu = ({ setUser }: MenuProps) => {
             email
         }
         setUser(user);
-        navigate("/instructions");
+        if (checked){
+            navigate("/instructions");
+        } else {
+            setShowError(true);
+        }
     }
 
     return (
@@ -127,6 +135,12 @@ const Menu = ({ setUser }: MenuProps) => {
                                 onClick={() => { navigate("/information") }}>here 
                             </u> to read the information sheet
                         </p>
+                        <div style={{marginBottom:"1rem"}}>
+                            <Alert severity="error">
+                                You must read the information sheet and agree to participate in the study before continuing. 
+                                Access the information sheet using the link above.
+                            </Alert>
+                        </div>
                         <div style={{ textAlign: "center" }}>
                             <Button variant="contained" onClick={handleClick}>
                                 Submit

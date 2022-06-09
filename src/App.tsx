@@ -12,6 +12,7 @@ function App() {
 
   const [surenessList, setSurenessList] = useState<number[]>([]);
   const [willingnessList, setWillingnessList] = useState<number[]>([]);
+  const [checked, setChecked] = useState<boolean>(false);
   const [user, setUser] = useState<User>({
     age: "",
     gender: "",
@@ -31,7 +32,11 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Landing setUser={setUser} />} />
+          <Route path="/" element={
+          <Landing 
+            setUser={setUser} 
+            checked={checked}
+          />} />
           <Route path="/instructions" element={<Instructions />} />
           <Route path="/experiment" element={
             <Experiment
@@ -47,7 +52,11 @@ function App() {
               willingness={willingnessList}
             />
           } />
-          <Route path="/information" element={<Information />} />
+          <Route path="/information" element={
+            <Information
+              setChecked={setChecked}
+            />
+          } />
         </Routes>
       </div>
     </Router>
