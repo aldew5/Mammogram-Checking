@@ -55,6 +55,7 @@ function App() {
           <Route path="/information" element={
             <Information
               setChecked={setChecked}
+              checked={checked}
             />
           } />
         </Routes>

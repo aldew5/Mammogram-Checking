@@ -45,7 +45,7 @@ const Menu = ({ setUser, checked }: MenuProps) => {
             email
         }
         setUser(user);
-        if (checked){
+        if (checked) {
             navigate("/instructions");
         } else {
             setShowError(true);
@@ -132,14 +132,16 @@ const Menu = ({ setUser, checked }: MenuProps) => {
                         <p>
                             Click <u
                                 className={styles.link}
-                                onClick={() => { navigate("/information") }}>here 
+                                onClick={() => { navigate("/information") }}>here
                             </u> to read the information sheet
                         </p>
-                        <div style={{marginBottom:"1rem"}}>
-                            <Alert severity="error">
-                                You must read the information sheet and agree to participate in the study before continuing. 
-                                Access the information sheet using the link above.
-                            </Alert>
+                        <div style={{ marginBottom: "1rem" }}>
+                            {(showError) ?
+                                <Alert severity="error">
+                                    You must read the information sheet and agree to participate in the study before continuing.
+                                    Access the information sheet using the link above.
+                                </Alert> : <></>
+                            }
                         </div>
                         <div style={{ textAlign: "center" }}>
                             <Button variant="contained" onClick={handleClick}>
