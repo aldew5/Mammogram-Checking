@@ -13,6 +13,10 @@ interface SelectionProps {
     setDisplayImage: Dispatch<SetStateAction<boolean>>;
     setSurenessList: Dispatch<SetStateAction<number[]>>;
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
+    setSureness: Dispatch<SetStateAction<number>>;
+    setWillingness: Dispatch<SetStateAction<number>>;
+    sureness: number;
+    willingness: number;
     willingnessList: number[];
     surenessList: number[];
     index: number;
@@ -25,12 +29,11 @@ interface Mark {
 }
 
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
-    willingnessList, surenessList, index, length }: SelectionProps) => {
-
-    const [willingness, setWillingness] = useState<number>(5);
-    const [sureness, setSureness] = useState<number>(4);
+    willingnessList, surenessList, index, length, willingness, setWillingness,
+    sureness, setSureness }: SelectionProps) => {
 
     const navigate = useNavigate();
+    const [displayWilling, setDisplayWilling] = useState<boolean>(true);
 
     function valueText(value: number) {
         return `${value}`
@@ -56,16 +59,20 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
         }
     }
 
-    const handleClick = () => {
+    const handleClick1 = () => {
+        let sure: number[] = surenessList;
+        sure.push(sureness);
+        setSurenessList(sure);
+
+        setDisplayWilling(false);
+    }
+
+    const handleClick2 = () => {
         setDisplayImage(true);
 
         let willing: number[] = willingnessList;
         willing.push(willingness);
         setWillingnessList(willing);
-
-        let sure: number[] = surenessList;
-        sure.push(sureness);
-        setSurenessList(sure);
 
         if (index >= length) {
             navigate("/completion");
@@ -73,60 +80,67 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     }
 
     const labelling_marks: Mark[] = [
-        { value: 1, label: 'Completely sure' },
-        { value: 10, label: "Not sure at all" }
+        { value: 1, label: 'Completely normal' },
+        { value: 10, label: "Clearly to be recalled" }
     ];
     const willing_marks: Mark[] = [
-        { value: 1, label: "Completely willing" },
-        { value: 10, label: "Not willing at all" }
+        { value: 1, label: "Yes, let the computer triage this image" },
+        { value: 10, label: "No, a human must look at this case" }
     ];
 
     return (
         <div style={{ width: "700px", marginLeft: "350px" }}>
             <div style={{ marginBottom: "2rem" }}>
-                <div style={{ marginBottom: "8rem" }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <h3>How sure are you that these images are from the normal case?</h3>
+                {(displayWilling) ?
+                    <div style={{ marginBottom: "8rem" }}>
+
+
+                        <div style={{ marginBottom: "2rem" }}>
+                            <h3>How sure are you that these images are from the normal case?</h3>
+                        </div>
+                        <Box>
+                            <Slider
+                                aria-label="Labelling"
+                                defaultValue={sureness}
+                                getAriaValueText={valueText}
+                                valueLabelDisplay="auto"
+                                step={1}
+                                min={1}
+                                max={10}
+                                marks={labelling_marks}
+                                onChange={handleChange1}
+                            />
+                        </Box>
+                        <Button variant="contained" onClick={handleClick1}>
+                            Confirm
+                        </Button>
+                    </div> :
+                    <div>
+                        <div style={{ marginBottom: "2rem" }}>
+                            <h3>The computer has rated these images X out of 10 (10: highest probabilty that
+                                there is cancer present). How willing would you be to let the computer make
+                                the decision about this case alone without having you look at it?
+                            </h3>
+                        </div>
+                        <Box>
+                            <Slider
+                                aria-label="Willing"
+                                defaultValue={4}
+                                getAriaValueText={valueText}
+                                valueLabelDisplay="auto"
+                                step={1}
+                                min={1}
+                                max={10}
+                                marks={willing_marks}
+                                onChange={handleChange2}
+                            />
+                        </Box>
+                        <Button variant="contained" onClick={handleClick2}>
+                            Confirm
+                        </Button>
                     </div>
-                    <Box>
-                        <Slider
-                            aria-label="Labelling"
-                            defaultValue={5}
-                            getAriaValueText={valueText}
-                            valueLabelDisplay="auto"
-                            step={1}
-                            min={1}
-                            max={10}
-                            marks={labelling_marks}
-                            onChange={handleChange1}
-                        />
-                    </Box>
-                </div>
-                <div>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <h3>The computer has rated these images X out of 10 (10: highest probabilty that
-                            there is cancer present). How willing would you be to let the computer make
-                            the decision about this case alone without having you look at it?
-                        </h3>
-                    </div>
-                    <Box>
-                        <Slider
-                            aria-label="Willing"
-                            defaultValue={4}
-                            getAriaValueText={valueText}
-                            valueLabelDisplay="auto"
-                            step={1}
-                            min={1}
-                            max={10}
-                            marks={willing_marks}
-                            onChange={handleChange2}
-                        />
-                    </Box>
-                </div>
+                }
             </div>
-            <Button variant="contained" onClick={handleClick}>
-                Confirm
-            </Button>
         </div>
     )
 }

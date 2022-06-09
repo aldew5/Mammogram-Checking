@@ -17,6 +17,8 @@ const Experiment = ({ willingnessList, surenessList,
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
     const [index, setIndex] = useState<number>(0);
+    const [willingness, setWillingness] = useState<number>(5);
+    const [sureness, setSureness] = useState<number>(4);
 
     const images: any = [Cat, Dog];
 
@@ -35,6 +37,8 @@ const Experiment = ({ willingnessList, surenessList,
                         index={index}
                         setIndex={setIndex}
                         images={images}
+                        sureness={sureness}
+                        setSureness={setSureness}
                     />
                     :
                     <Selection
@@ -45,6 +49,10 @@ const Experiment = ({ willingnessList, surenessList,
                         setSurenessList={setSurenessList}
                         index={index}
                         length={images.length}
+                        willingness={willingness}
+                        setWillingness={setWillingness}
+                        sureness={sureness}
+                        setSureness={setSureness}
                     />
                 }
             </div>
