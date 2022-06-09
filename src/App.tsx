@@ -2,6 +2,7 @@ import Landing from "./pages/Landing";
 import Experiment from "./pages/Experiment";
 import Instructions from "./pages/Instructions";
 import Completion from "./pages/Completion";
+import Information from "./pages/Information";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { User } from "./interfaces/user";
 import { useState } from "react";
@@ -21,7 +22,8 @@ function App() {
     years: "",
     setting: "",
     program: "",
-    models: ""
+    models: "",
+    email: ""
   })
 
 
@@ -45,6 +47,7 @@ function App() {
               willingness={willingnessList}
             />
           } />
+          <Route path="/information" element={<Information />} />
         </Routes>
       </div>
     </Router>

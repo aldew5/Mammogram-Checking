@@ -9,4 +9,5 @@ export interface User {
     setting: string;
     program: string;
     models: string;
+    email: string;
 }

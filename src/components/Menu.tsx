@@ -22,6 +22,7 @@ const Menu = ({ setUser }: MenuProps) => {
     const [setting, setSetting] = useState<string>("");
     const [program, setProgram] = useState<string>("");
     const [models, setModels] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -36,7 +37,8 @@ const Menu = ({ setUser }: MenuProps) => {
             years,
             setting,
             program,
-            models
+            models,
+            email
         }
         setUser(user);
         navigate("/instructions");
@@ -48,7 +50,7 @@ const Menu = ({ setUser }: MenuProps) => {
                 <div className={styles.form_style_2_heading}>
                     <h3>User Information</h3>
                 </div>
-                <div style={{textAlign: 'left'}}>
+                <div style={{ textAlign: 'left' }}>
                     <form>
                         <label htmlFor="age">Age:</label>
                         <input type="text" id="age"
@@ -109,6 +111,22 @@ const Menu = ({ setUser }: MenuProps) => {
                             value={models} onChange={(e) => { setModels(e.target.value) }}
                             style={{ marginBottom: "2rem" }}
                         /><br />
+
+                        <label htmlFor="models">
+                            If you would like us to let you know what we learn from this study,
+                            please give us your email:
+                        </label>
+                        <input type="text" id="email"
+                            value={email} onChange={(e) => { setEmail(e.target.value) }}
+                            style={{ marginBottom: "2rem" }}
+                        /><br />
+                        <hr />
+                        <p>
+                            Click <u
+                                className={styles.link}
+                                onClick={() => { navigate("/information") }}>here 
+                            </u> to read the information sheet
+                        </p>
                         <div style={{ textAlign: "center" }}>
                             <Button variant="contained" onClick={handleClick}>
                                 Submit
