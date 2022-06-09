@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import Cat from "../assets/cat.jpeg";
+import { Normal1 } from "../assets";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Instructions.module.css";
 
@@ -32,7 +32,7 @@ const Instructions = () => {
             </p>
             <p className={styles.text}>A sample trial image is shown below:</p>
             <div style={{ margin: "auto" }}>
-                <img src={Cat} alt="not found" width="350px" />
+                <img src={Normal1} alt="not found" width="250px" />
             </div>
             <div style={{ marginTop: "1rem" }}>
                 <Button variant="contained" onClick={() => { navigate("/experiment") }}>

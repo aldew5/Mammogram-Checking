@@ -51,10 +51,10 @@ const Image = ({ index, images, sureness, setSureness, setIndex }: ImageProps) =
     return (
         <div>
             <div style={{ width: "1400px", overflow: "hidden" }}>
-                <div style={{ width: "500px", float: "left", marginLeft: "200px" }}>
+                <div style={{ width: "500px", float: "left", marginLeft: "250px" }}>
                     <img src={images[image_index]} alt="not found" width="400px" />
                 </div>
-                <div style={{ marginRight: "300px" }}>
+                <div style={{ marginRight: "250px" }}>
                     <img src={images[image_index + 1]} alt="not found" width="400px" />
                 </div>
             </div>

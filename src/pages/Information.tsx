@@ -52,7 +52,7 @@ const Information = ({ checked, setChecked }: InformationProps) => {
                         above and then check the box to continue.
                     </Alert>
                 </div> : <div></div>}
-            <div style={{ marginLeft: "-290px" }}>
+            <div style={{ marginLeft: "-215px" }}>
                 <Button variant='contained'
                     onClick={handleClick}>
                     Return to experiment
