@@ -45,12 +45,19 @@ const Image = ({ index, images, sureness, setSureness, setIndex }: ImageProps) =
 
     useEffect(() => {
         image_index = index;
-        setIndex(index + 1);
+        setIndex(index + 2);
     }, []);
 
     return (
         <div>
-            <img src={images[image_index]} alt="not found" width="500px" />
+            <div style={{ width: "1400px", overflow: "hidden" }}>
+                <div style={{ width: "500px", float: "left", marginLeft: "200px" }}>
+                    <img src={images[image_index]} alt="not found" width="400px" />
+                </div>
+                <div style={{ marginRight: "300px" }}>
+                    <img src={images[image_index + 1]} alt="not found" width="400px" />
+                </div>
+            </div>
             <div style={{ width: "700px", marginLeft: "350px" }}>
                 <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
                     <h3>How sure are you that these images are from the normal case?</h3>
