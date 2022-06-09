@@ -1,6 +1,4 @@
 import Image from "../components/Image";
-import Cat from "../assets/cat.jpeg";
-import Dog from "../assets/dog.jpeg";
 import Selection from "../components/Selection";
 import { useState, useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
