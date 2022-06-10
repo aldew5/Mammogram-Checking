@@ -31,7 +31,7 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
         });
     }
 
-    let scatterData:number[][] = [];
+    let scatterData:any[][] = [['AI Rating', 'Willingness']];
 
     useEffect(() => {
         for (let i = 0; i < sureness.length; i++){
