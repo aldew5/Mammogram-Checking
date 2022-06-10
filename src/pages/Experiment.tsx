@@ -21,7 +21,7 @@ const Experiment = ({ willingnessList, surenessList,
 
     useEffect(() => {
         if (displayImage) {
-            console.log("call");
+            console.log("call", surenessList, willingnessList);
             const timer = setTimeout(() => {
                 setDisplayImage(false);
             }, 5000);

@@ -1,0 +1,9 @@
+.clear {
+    float: right;
+    margin-top: -75px;
+    margin-right: 75px;
+}
+
+.clear:hover {
+    cursor: pointer;
+}
