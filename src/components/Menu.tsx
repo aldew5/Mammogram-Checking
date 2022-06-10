@@ -56,7 +56,7 @@ const Menu = ({ setUser, checked }: MenuProps) => {
         <Card className={styles.form_style_2}>
             <CardContent>
                 <div className={styles.form_style_2_heading}>
-                    <h3>User Information</h3>
+                    User Information
                 </div>
                 <div style={{ textAlign: 'left' }}>
                     <form>
@@ -72,7 +72,7 @@ const Menu = ({ setUser, checked }: MenuProps) => {
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="location">Where do you work? </label>
+                        <label htmlFor="location">Which country do you work in? </label>
                         <input type="text" id="location"
                             value={location} onChange={(e) => { setLocation(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
@@ -84,13 +84,13 @@ const Menu = ({ setUser, checked }: MenuProps) => {
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="mammo_number">How many mammogram cases do you read each year? </label>
+                        <label htmlFor="mammo_number">Approximately how many mammogram cases do you read each year? </label>
                         <input type="text" id="mammo_number"
                             value={mammo} onChange={(e) => { setMammo(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
                         /><br />
 
-                        <label htmlFor="screening_number">Number of screening cases per year? </label>
+                        <label htmlFor="screening_number">Approximately how many screening cases do you do per year? </label>
                         <input type="text" id="screening_number"
                             value={screening} onChange={(e) => { setScreening(e.target.value) }}
                             style={{ marginBottom: "1.5rem" }}
@@ -132,7 +132,8 @@ const Menu = ({ setUser, checked }: MenuProps) => {
                         <p>
                             Click <u
                                 className={styles.link}
-                                onClick={() => { navigate("/information") }}>here
+                                onClick={() => { navigate("/information") }}>
+                                here
                             </u> to read the information sheet
                         </p>
                         <div style={{ marginBottom: "1rem" }}>
@@ -144,7 +145,10 @@ const Menu = ({ setUser, checked }: MenuProps) => {
                             }
                         </div>
                         <div style={{ textAlign: "center" }}>
-                            <Button variant="contained" onClick={handleClick}>
+                            <Button variant="contained"
+                                style={{ backgroundColor: "#28243c" }}
+                                onClick={handleClick}
+                                sx={{ width: "200px" }}>
                                 Submit
                             </Button>
                         </div>
