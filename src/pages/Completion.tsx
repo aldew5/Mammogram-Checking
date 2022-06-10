@@ -31,15 +31,12 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
         });
     }
 
-    let scatterData:any[][] = [['AI Rating', 'Willingness']];
+    let scatterData: any[][] = [['AI Rating', 'Willingness']];
 
     useEffect(() => {
-        for (let i = 0; i < sureness.length; i++){
+        for (let i = 0; i < sureness.length; i++) {
             scatterData.push([sureness[i], willingness[i]]);
         }
-        console.log(scatterData);
-        console.log(sureness);
-        console.log(willingness);
         completeTrials();
     }, []);
 

@@ -16,12 +16,12 @@ interface InformationProps {
 const Information = ({ checked, setChecked }: InformationProps) => {
 
     const [showWarning, setShowWarning] = useState<boolean>(false);
-
     const navigate = useNavigate();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
     }
+
     const handleClick = () => {
         if (checked) {
             navigate("/");
