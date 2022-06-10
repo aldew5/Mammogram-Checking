@@ -101,6 +101,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                         <Box>
                             <Slider
                                 aria-label="Labelling"
+                                key={`slider-${sureness}`}
                                 defaultValue={sureness}
                                 getAriaValueText={valueText}
                                 valueLabelDisplay="auto"

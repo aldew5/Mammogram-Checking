@@ -20,11 +20,14 @@ const Experiment = ({ willingnessList, surenessList,
     const [sureness, setSureness] = useState<number>(4);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setDisplayImage(false);
-        }, 5000);
-        return () => clearTimeout(timer);
-    })
+        if (displayImage) {
+            console.log("call");
+            const timer = setTimeout(() => {
+                setDisplayImage(false);
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [displayImage])
 
     return (
         <div style={{ marginTop: "100px" }}>
