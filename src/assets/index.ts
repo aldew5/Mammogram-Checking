@@ -1,3 +1,6 @@
+import Cancer1 from "../assets/cancer_case/p2100011202ml.jpeg";
+import Cancer2 from "../assets/cancer_case/p2100011202mr.jpeg";
+
 import Normal1 from "../assets/normal_cases/001.jpeg";
 import Normal2 from "../assets/normal_cases/002.jpeg";
 import Normal3 from "../assets/normal_cases/003.jpeg";
@@ -379,5 +382,7 @@ export {
     Normal187,
     Normal188,
     Normal189,
-    Normal190
+    Normal190,
+    Cancer1,
+    Cancer2
 };
