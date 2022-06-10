@@ -1,21 +1,34 @@
 import Menu from "../components/Menu";
-import { Dispatch, SetStateAction } from "react";
+import Information from "../components/Information";
+import { Dispatch, SetStateAction, useState } from "react";
 import { User } from "../interfaces/user";
 import styles from "../styles/Landing.module.css";
 
 interface LandingProps {
     setUser: Dispatch<SetStateAction<User>>;
-    checked: boolean;
 }
 
-const Landing = ({ setUser, checked }: LandingProps) => {
+const Landing = ({ setUser }: LandingProps) => {
+
+    const [showInformation, setShowInformation] = useState<boolean>(false);
+    const [checked, setChecked] = useState<boolean>(false);
 
     return (
-        <div className={styles.main}>
-            <Menu
-                setUser={setUser}
-                checked={checked}
-            />
+        <div style={{backgroundColor: "#535974", height: "800px", borderStyle:"solid", borderWidth:"0.1px"}}>
+            {(showInformation) ?
+                <Information
+                    setShowInformation={setShowInformation}
+                    setChecked={setChecked}
+                    checked={checked}
+                /> :
+                <div className={styles.main}>
+                    <Menu
+                        setUser={setUser}
+                        checked={checked}
+                        setShowInformation={setShowInformation}
+                    />
+                </div>
+            }
         </div>
     )
 }

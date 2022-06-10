@@ -1,19 +1,20 @@
 import { useState, Dispatch, SetStateAction } from "react";
-import { useNavigate } from "react-router-dom";
 import { User } from "../interfaces/user";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import styles from "../styles/Menu.module.css";
 import Alert from '@mui/material/Alert';
+import { useNavigate } from "react-router-dom";
 
 
 interface MenuProps {
     setUser: Dispatch<SetStateAction<User>>;
+    setShowInformation: Dispatch<SetStateAction<boolean>>;
     checked: boolean;
 }
 
-const Menu = ({ setUser, checked }: MenuProps) => {
+const Menu = ({ setUser, checked, setShowInformation }: MenuProps) => {
 
     const [age, setAge] = useState<string>("");
     const [gender, setGender] = useState<string>("");
@@ -132,7 +133,7 @@ const Menu = ({ setUser, checked }: MenuProps) => {
                         <p>
                             Click <u
                                 className={styles.link}
-                                onClick={() => { navigate("/information") }}>
+                                onClick={() => { setShowInformation(true); }}>
                                 here
                             </u> to read the information sheet
                         </p>
