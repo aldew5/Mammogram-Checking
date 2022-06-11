@@ -110,8 +110,8 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                     <EscapeCard setClicked={setClicked} />
                 </div> : <></>
             }
-            <div style={{ width: "700px", marginLeft: "350px" }}>
-                <div style={{ marginBottom: "2rem" }}>
+            <div style={{ width: "700px", paddingTop: "1rem" }}>
+                <div style={{ marginBottom: "2rem", marginLeft: "300px" }}>
                     {(!clicked) ?
                         <div>
                             {(displayWilling) ?

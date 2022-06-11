@@ -41,14 +41,16 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
     }, []);
 
     return (
-        <div>
-            <h1>Thank you for completing the experiment!</h1>
-            <p>There were XX path-proven cancers in this set,
-                you rated them A, B, C...
-            </p>
-            <p>
-                Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
-            </p>
+        <div style={{marginTop: "50px"}}>
+            <div>
+                <h1>Thank you for completing the experiment!</h1>
+                <p>There were XX path-proven cancers in this set,
+                    you rated them A, B, C...
+                </p>
+                <p>
+                    Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
+                </p>
+            </div>
             <div style={{marginLeft: "350px"}}>
                 <Chart
                     width={'700px'}

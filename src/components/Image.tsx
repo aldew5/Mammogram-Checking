@@ -50,15 +50,15 @@ const Image = ({ index, images, sureness, setSureness, setIndex }: ImageProps) =
 
     return (
         <div>
-            <div style={{ width: "1400px", overflow: "hidden" }}>
-                <div style={{ width: "500px", float: "left", marginLeft: "250px" }}>
-                    <img src={images[image_index]} alt="not found" width="400px" />
+            <div style={{ overflow: "hidden" }}>
+                <div style={{ width: "500px", float: "left" }}>
+                    <img src={images[image_index]} alt="not found" height="500px" />
                 </div>
-                <div style={{ marginRight: "250px" }}>
-                    <img src={images[image_index + 1]} alt="not found" width="400px" />
+                <div style={{}}>
+                    <img src={images[image_index + 1]} alt="not found" height="500px" />
                 </div>
             </div>
-            <div style={{ width: "700px", marginLeft: "350px" }}>
+            <div style={{ width: "700px", marginLeft: "150px"}}>
                 <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
                     <h3>How sure are you that these images are from the normal case?</h3>
                 </div>

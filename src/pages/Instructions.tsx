@@ -8,8 +8,8 @@ const Instructions = () => {
     const navigate = useNavigate();
 
     return (
-        <div style={{backgroundColor: "#535974", height: "790px", borderStyle: "solid", alignContent:'center', borderWidth:"0.1px"}}>
-            <div style={{marginLeft:"65px", backgroundColor: "white", marginTop: "30px", borderStyle: "solid", width: "1300px"}}>
+        <div style={{ backgroundColor: "#535974", height: "790px", borderStyle: "solid", alignContent: 'center', borderWidth: "0.1px" }}>
+            <div style={{ marginLeft: "65px", backgroundColor: "white", marginTop: "30px", borderStyle: "solid", width: "1300px" }}>
                 <p className={styles.title}>Instructions:</p>
                 <p className={styles.text}>
                     It has been suggested that Artificial Intelligence (AI) software could be used to triage / filter

@@ -30,30 +30,38 @@ const Experiment = ({ willingnessList, surenessList,
     }, [displayImage])
 
     return (
-        <div style={{ marginTop: "100px" }}>
+        <div style={{ paddingTop: "50px", backgroundColor: "#535974", borderStyle: "solid", height: "740px" }}>
             <div>
                 {(displayImage) ?
-                    <Image
-                        index={index}
-                        setIndex={setIndex}
-                        images={images}
-                        sureness={sureness}
-                        setSureness={setSureness}
-                    />
+                    <div style={{
+                        borderStyle: "solid", width: "1000px",
+                        marginLeft: "220px", height: "650px", backgroundColor: "white", paddingTop: "50px"
+                    }}>
+                        <Image
+                            index={index}
+                            setIndex={setIndex}
+                            images={images}
+                            sureness={sureness}
+                            setSureness={setSureness}
+                        />
+                    </div>
                     :
-                    <Selection
-                        setDisplayImage={setDisplayImage}
-                        willingnessList={willingnessList}
-                        setWillingnessList={setWillingnessList}
-                        surenessList={surenessList}
-                        setSurenessList={setSurenessList}
-                        index={index}
-                        length={images.length}
-                        willingness={willingness}
-                        setWillingness={setWillingness}
-                        sureness={sureness}
-                        setSureness={setSureness}
-                    />
+                    <div style={{backgroundColor: "white", width: "1000px", marginLeft: "220px", 
+                    paddingBottom: "30px", borderRadius: "8px"}}>
+                        <Selection
+                            setDisplayImage={setDisplayImage}
+                            willingnessList={willingnessList}
+                            setWillingnessList={setWillingnessList}
+                            surenessList={surenessList}
+                            setSurenessList={setSurenessList}
+                            index={index}
+                            length={images.length}
+                            willingness={willingness}
+                            setWillingness={setWillingness}
+                            sureness={sureness}
+                            setSureness={setSureness}
+                        />
+                    </div>
                 }
             </div>
         </div>
