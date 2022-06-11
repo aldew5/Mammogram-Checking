@@ -14,12 +14,12 @@ const EscapeCard = ({ setClicked }: EscapeCardProps) => {
     const navigate = useNavigate();
 
     return (
-        <Card sx={{ maxWidth: 450, minHeight: 250, border: 2, marginLeft: 60 }}>
+        <Card sx={{ maxWidth: 450, minHeight: 250, border: 2, marginLeft: 60, borderRadius: "8px" }}>
             <CardContent>
                 <Typography style={{
                     marginBottom: "3rem",
                     marginTop: "2rem"
-                }}>Are you sure you would like to terminate the experiment?</Typography>
+                }}><b>Are you sure you would like to terminate the experiment?</b></Typography>
                 <div style={{ paddingTop: "20px" }}>
                     <div style={{ float: "left", paddingLeft: "100px" }}>
                         <Button

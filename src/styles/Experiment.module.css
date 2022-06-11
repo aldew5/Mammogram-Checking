@@ -1,0 +1,16 @@
+.container {
+    padding-top: 50px;
+    background-color: #535974;
+    border-style: solid;
+    height: 740px;
+
+}
+
+.image {
+    border-style: solid;
+    width: 1000px;
+    margin-left: 220px;
+    height: 650px;
+    background-color: white;
+    padding-top: 50px;
+}

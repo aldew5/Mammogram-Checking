@@ -102,20 +102,24 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
 
     return (
         <div>
-            <div className={styles.clear}>
-                <ClearIcon onClick={handleClear} />
-            </div>
+            {(!clicked) ?
+                <div className={styles.clear}>
+                    <ClearIcon onClick={handleClear} />
+                </div> : <></>
+            }
             {(clicked) ?
                 <div style={{ position: "absolute" }}>
                     <EscapeCard setClicked={setClicked} />
-                </div> : <></>
-            }
-            <div style={{ width: "700px", paddingTop: "1rem" }}>
-                <div style={{ marginBottom: "2rem", marginLeft: "300px" }}>
-                    {(!clicked) ?
-                        <div>
+                </div> :
+
+                <div className={styles.selection}>
+                    <div style={{
+                        marginBottom: "2rem", marginLeft: "150px", width: "700px",
+                        paddingTop: "2rem"
+                    }}>
+                        <div style={{ width: "700px" }}>
                             {(displayWilling) ?
-                                <div style={{ marginBottom: "8rem" }}>
+                                <div>
                                     <div style={{ marginBottom: "2rem" }}>
                                         <h3>How sure are you that these images are from the normal case?</h3>
                                     </div>
@@ -136,7 +140,8 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                                     <Button variant="contained" onClick={handleClick1}>
                                         Confirm
                                     </Button>
-                                </div> :
+                                </div>
+                                :
                                 <div>
                                     <div style={{ marginBottom: "2rem" }}>
                                         <h3>The computer has rated these images X out of 10 (10: highest probabilty that
@@ -162,10 +167,10 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                                     </Button>
                                 </div>
                             }
-                        </div> : <></>
-                    }
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     )
 }

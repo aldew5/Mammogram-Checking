@@ -41,26 +41,31 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
     }, []);
 
     return (
-        <div style={{marginTop: "50px"}}>
-            <div>
-                <h1>Thank you for completing the experiment!</h1>
-                <p>There were XX path-proven cancers in this set,
-                    you rated them A, B, C...
-                </p>
-                <p>
-                    Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
-                </p>
-            </div>
-            <div style={{marginLeft: "350px"}}>
-                <Chart
-                    width={'700px'}
-                    height={'420px'}
-                    chartType="ScatterChart"
-                    loader={<div>Loading Chart</div>}
-                    data={scatterData}
-                    options={scatterOptions}
-                    rootProps={{ 'data-testid': '1' }}
-                />
+        <div style={{ paddingTop: "50px", backgroundColor: "#535974", height: "740px" }}>
+            <div style={{
+                backgroundColor: "white", width: "1000px", marginLeft: "220px",
+                paddingTop: "30px", paddingBottom: "50px", borderStyle: "solid", borderRadius: "8px"
+            }}>
+                <div>
+                    <h1>Thank you for completing the experiment!</h1>
+                    <p>There were XX path-proven cancers in this set,
+                        you rated them A, B, C...
+                    </p>
+                    <p>
+                        Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
+                    </p>
+                </div>
+                <div style={{ paddingLeft: "150px" }}>
+                    <Chart
+                        width={'700px'}
+                        height={'420px'}
+                        chartType="ScatterChart"
+                        loader={<div>Loading Chart</div>}
+                        data={scatterData}
+                        options={scatterOptions}
+                        rootProps={{ 'data-testid': '1' }}
+                    />
+                </div>
             </div>
         </div>
     )

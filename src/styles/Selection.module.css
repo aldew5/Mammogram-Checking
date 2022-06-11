@@ -1,9 +1,17 @@
 .clear {
     float: right;
-    margin-top: -75px;
-    margin-right: 75px;
+    margin-top: 20px;
+    margin-right: 250px;
 }
 
 .clear:hover {
     cursor: pointer;
+}
+
+.selection {
+    background-color: white;
+    width: 1000px;
+    margin-left: 220px;
+    padding-bottom: 30px;
+    border-radius: 8px;
 }

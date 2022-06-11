@@ -231,13 +231,13 @@ function shuffle(array: any) {
         // this is the first image in the pair
         let cur: number;
         let rand: number;
-        if (currentIndex % 2 === 0){
+        if (currentIndex % 2 === 0) {
             cur = currentIndex + 1;
         } else {
             cur = currentIndex - 1;
         }
 
-        if (randomIndex % 2 === 0){
+        if (randomIndex % 2 === 0) {
             rand = randomIndex + 1;
         } else {
             rand = randomIndex - 1;

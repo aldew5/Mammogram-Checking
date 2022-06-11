@@ -3,6 +3,7 @@ import Selection from "../components/Selection";
 import { useState, useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
 import images from "../util/images";
+import styles from "../styles/Experiment.module.css";
 
 interface ExperimentProps {
     willingnessList: number[];
@@ -30,13 +31,10 @@ const Experiment = ({ willingnessList, surenessList,
     }, [displayImage])
 
     return (
-        <div style={{ paddingTop: "50px", backgroundColor: "#535974", borderStyle: "solid", height: "740px" }}>
+        <div className={styles.container}>
             <div>
                 {(displayImage) ?
-                    <div style={{
-                        borderStyle: "solid", width: "1000px",
-                        marginLeft: "220px", height: "650px", backgroundColor: "white", paddingTop: "50px"
-                    }}>
+                    <div className={styles.image}>
                         <Image
                             index={index}
                             setIndex={setIndex}
@@ -46,8 +44,7 @@ const Experiment = ({ willingnessList, surenessList,
                         />
                     </div>
                     :
-                    <div style={{backgroundColor: "white", width: "1000px", marginLeft: "220px", 
-                    paddingBottom: "30px", borderRadius: "8px"}}>
+                    <div>
                         <Selection
                             setDisplayImage={setDisplayImage}
                             willingnessList={willingnessList}
