@@ -129,6 +129,7 @@ const Menu = ({ setUser, checked, setShowInformation }: MenuProps) => {
                             value={email} onChange={(e) => { setEmail(e.target.value) }}
                             style={{ marginBottom: "2rem" }}
                         /><br />
+                        
                         <hr />
                         <p>
                             Click <u

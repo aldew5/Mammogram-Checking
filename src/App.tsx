@@ -2,7 +2,6 @@ import Landing from "./pages/Landing";
 import Experiment from "./pages/Experiment";
 import Instructions from "./pages/Instructions";
 import Completion from "./pages/Completion";
-import Information from "./components/Information";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { User } from "./interfaces/user";
 import { useState } from "react";
@@ -26,15 +25,14 @@ function App() {
     email: ""
   })
 
-
   return (
     <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={
-          <Landing 
-            setUser={setUser} 
-          />} />
+            <Landing
+              setUser={setUser}
+            />} />
           <Route path="/instructions" element={<Instructions />} />
           <Route path="/experiment" element={
             <Experiment
