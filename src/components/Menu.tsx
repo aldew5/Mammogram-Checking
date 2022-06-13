@@ -9,24 +9,38 @@ import { useNavigate } from "react-router-dom";
 
 
 interface MenuProps {
+    checked: boolean;
+    age: string;
+    gender: string;
+    specialty: string;
+    location: string;
+    mammo: string;
+    screening: string;
+    years: string;
+    setting: string;
+    program: string;
+    models: string;
+    email: string;
     setUser: Dispatch<SetStateAction<User>>;
     setShowInformation: Dispatch<SetStateAction<boolean>>;
-    checked: boolean;
+    setAge: Dispatch<SetStateAction<string>>;
+    setGender: Dispatch<SetStateAction<string>>;
+    setSpecialty: Dispatch<SetStateAction<string>>;
+    setLocation: Dispatch<SetStateAction<string>>;
+    setMammo: Dispatch<SetStateAction<string>>;
+    setScreening: Dispatch<SetStateAction<string>>;
+    setYears: Dispatch<SetStateAction<string>>;
+    setSetting: Dispatch<SetStateAction<string>>;
+    setProgram: Dispatch<SetStateAction<string>>;
+    setModels: Dispatch<SetStateAction<string>>;
+    setEmail: Dispatch<SetStateAction<string>>;
 }
 
-const Menu = ({ setUser, checked, setShowInformation }: MenuProps) => {
+const Menu = ({ setUser, checked, setShowInformation, age, gender, specialty, location,
+    mammo, screening, years, setting, program, models, email, setAge, setGender,
+    setSpecialty, setLocation, setMammo, setScreening, setYears, setSetting, setProgram,
+    setModels, setEmail }: MenuProps) => {
 
-    const [age, setAge] = useState<string>("");
-    const [gender, setGender] = useState<string>("");
-    const [specialty, setSpecialty] = useState<string>("");
-    const [location, setLocation] = useState<string>("");
-    const [mammo, setMammo] = useState<string>("");
-    const [screening, setScreening] = useState<string>("");
-    const [years, setYears] = useState<string>("");
-    const [setting, setSetting] = useState<string>("");
-    const [program, setProgram] = useState<string>("");
-    const [models, setModels] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
     const [showError, setShowError] = useState<boolean>(false);
 
     const navigate = useNavigate();
@@ -129,7 +143,7 @@ const Menu = ({ setUser, checked, setShowInformation }: MenuProps) => {
                             value={email} onChange={(e) => { setEmail(e.target.value) }}
                             style={{ marginBottom: "2rem" }}
                         /><br />
-                        
+
                         <hr />
                         <p>
                             Click <u
