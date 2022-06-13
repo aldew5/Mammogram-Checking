@@ -145,7 +145,7 @@ const Menu = ({ setUser, checked, setShowInformation, age, gender, specialty, lo
                         /><br />
 
                         <hr />
-                        <p>
+                        <p style={{fontSize: "14px", fontWeight: "500"}}>
                             Click <u
                                 className={styles.link}
                                 onClick={() => { setShowInformation(true); }}>
