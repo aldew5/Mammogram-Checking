@@ -2,6 +2,7 @@ import {
     Dispatch,
     SetStateAction,
     useEffect,
+    useState,
 }
     from "react";
 import Box from '@mui/material/Box';
@@ -23,6 +24,8 @@ let image_index: number;
 
 const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProps) => {
 
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
     const labelling_marks: Mark[] = [
         { value: 1, label: 'Completely normal' },
         { value: 10, label: "Clearly to be recalled" }
@@ -43,38 +46,51 @@ const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProp
     }
 
     useEffect(() => {
+        if (isLoading) {
+            const timer = setTimeout(() => {
+                setIsLoading(false);
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [])
+
+    useEffect(() => {
         image_index = index;
         setIndex(index + 2);
     }, []);
 
     return (
         <div>
-            <div style={{ overflow: "hidden" }}>
-                <div style={{ width: "500px", float: "left" }}>
-                    <img src={images[image_index]} alt="not found" height="500px" />
+            {(isLoading) ? <div></div> : 
+            <div>
+                <div style={{ overflow: "hidden" }}>
+                    <div style={{ width: "500px", float: "left" }}>
+                        <img src={images[image_index]} alt="not found" height="500px" />
+                    </div>
+                    <div style={{}}>
+                        <img src={images[image_index + 1]} alt="not found" height="500px" />
+                    </div>
                 </div>
-                <div style={{}}>
-                    <img src={images[image_index + 1]} alt="not found" height="500px" />
+                <div style={{ width: "700px", marginLeft: "150px" }}>
+                    <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
+                        <h3>How sure are you that these images are from the normal case?</h3>
+                    </div>
+                    <Box>
+                        <Slider
+                            aria-label="Labelling"
+                            defaultValue={5}
+                            getAriaValueText={valueText}
+                            valueLabelDisplay="auto"
+                            step={1}
+                            min={1}
+                            max={10}
+                            marks={labelling_marks}
+                            onChange={handleChange}
+                        />
+                    </Box>
                 </div>
             </div>
-            <div style={{ width: "700px", marginLeft: "150px"}}>
-                <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
-                    <h3>How sure are you that these images are from the normal case?</h3>
-                </div>
-                <Box>
-                    <Slider
-                        aria-label="Labelling"
-                        defaultValue={5}
-                        getAriaValueText={valueText}
-                        valueLabelDisplay="auto"
-                        step={1}
-                        min={1}
-                        max={10}
-                        marks={labelling_marks}
-                        onChange={handleChange}
-                    />
-                </Box>
-            </div>
+            }
         </div>
     )
 }

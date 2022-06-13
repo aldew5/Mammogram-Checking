@@ -53,7 +53,7 @@ const Experiment = ({ willingnessList, surenessList,
             }, 5000);
             return () => clearTimeout(timer);
         }
-    }, [displayImage, isLoading])
+    }, [displayImage, isLoading]);
 
     return (
         <div className={styles.container}>
