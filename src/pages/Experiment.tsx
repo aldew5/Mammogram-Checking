@@ -1,9 +1,10 @@
-import Image from "../components/Image";
+import Mammogram from "../components/Mammogram";
 import Selection from "../components/Selection";
 import { useState, useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
 import images from "../util/images";
 import styles from "../styles/Experiment.module.css";
+import { ConnectingAirportsOutlined } from "@mui/icons-material";
 
 interface ExperimentProps {
     willingnessList: number[];
@@ -19,23 +20,47 @@ const Experiment = ({ willingnessList, surenessList,
     const [index, setIndex] = useState<number>(0);
     const [willingness, setWillingness] = useState<number>(5);
     const [sureness, setSureness] = useState<number>(4);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
+    const cacheImages = async (array: any[]) => {
+        const promises = await array.map((src) => {
+            return new Promise<void>(function (resolve, reject) {
+                const img = new Image();
+
+                img.src = src;
+                img.onload = function () {
+                    resolve();
+                 }
+                img.onerror = function () {
+                    reject();
+                }
+
+            });
+        });
+
+        await Promise.all(promises);
+        setIsLoading(false);
+    }
 
     useEffect(() => {
-        if (displayImage) {
-            console.log("call", surenessList, willingnessList);
+        cacheImages(images);
+    }, [])
+
+    useEffect(() => {
+        if (displayImage && !isLoading) {
             const timer = setTimeout(() => {
                 setDisplayImage(false);
             }, 5000);
             return () => clearTimeout(timer);
         }
-    }, [displayImage])
+    }, [displayImage, isLoading])
 
     return (
         <div className={styles.container}>
             <div>
                 {(displayImage) ?
                     <div className={styles.image}>
-                        <Image
+                        <Mammogram
                             index={index}
                             setIndex={setIndex}
                             images={images}

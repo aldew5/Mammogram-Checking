@@ -21,7 +21,7 @@ interface Mark {
 
 let image_index: number;
 
-const Image = ({ index, images, sureness, setSureness, setIndex }: ImageProps) => {
+const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProps) => {
 
     const labelling_marks: Mark[] = [
         { value: 1, label: 'Completely normal' },
@@ -79,4 +79,4 @@ const Image = ({ index, images, sureness, setSureness, setIndex }: ImageProps) =
     )
 }
 
-export default Image;
+export default Mammogram;
