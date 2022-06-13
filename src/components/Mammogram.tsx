@@ -3,8 +3,7 @@ import {
     SetStateAction,
     useEffect,
     useState,
-}
-    from "react";
+} from "react";
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
@@ -52,7 +51,7 @@ const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProp
             }, 100);
             return () => clearTimeout(timer);
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         image_index = index;

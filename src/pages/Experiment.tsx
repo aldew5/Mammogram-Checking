@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
 import images from "../util/images";
 import styles from "../styles/Experiment.module.css";
-import { ConnectingAirportsOutlined } from "@mui/icons-material";
 
 interface ExperimentProps {
     willingnessList: number[];

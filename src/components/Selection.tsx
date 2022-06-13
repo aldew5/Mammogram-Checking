@@ -110,7 +110,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
             {(clicked) ?
                 <div style={{ position: "absolute" }}>
                     <EscapeCard setClicked={setClicked} />
-                </div> 
+                </div>
                 :
                 <div className={styles.selection}>
                     <div style={{
