@@ -89,7 +89,9 @@ const Completion = ({ user, sureness, willingness, images }: CompletionProps) =>
                     />
                 </div>
             </div>
-            <CSVLink data={prepareData(user, sureness, willingness, images)}>
+            <CSVLink 
+                data={prepareData(user, sureness, willingness, images)}
+                filename={`${user.id}.csv`}>
                 Export to CSV
             </CSVLink>
         </div>
