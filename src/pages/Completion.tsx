@@ -38,7 +38,7 @@ const Completion = ({ user, sureness, willingness, images }: CompletionProps) =>
         willingness: number[], images: any[][]): string[][] {
 
         let data: string[][] = [["ID", "Age", "Gender", "Location", "Specialty", "Mammo Number",
-            "Screening Number", "Years", "Setting", "Program", "Models", "Email", "Case", 
+            "Screening Number", "Years", "Setting", "Program", "Models", "Email", "Case",
             "Willingness", "Sureness"]]
 
         let image_cnt: number = 0;
@@ -89,7 +89,7 @@ const Completion = ({ user, sureness, willingness, images }: CompletionProps) =>
                     />
                 </div>
             </div>
-            <CSVLink 
+            <CSVLink
                 data={prepareData(user, sureness, willingness, images)}
                 filename={`${user.id}.csv`}>
                 Export to CSV

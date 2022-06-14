@@ -60,35 +60,35 @@ const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProp
 
     return (
         <div>
-            {(isLoading) ? <div></div> : 
-            <div>
-                <div style={{ overflow: "hidden" }}>
-                    <div style={{ width: "500px", float: "left" }}>
-                        <img src={images[image_index][0]} alt="not found" height="500px" />
+            {(isLoading) ? <div></div> :
+                <div>
+                    <div style={{ overflow: "hidden" }}>
+                        <div style={{ width: "500px", float: "left" }}>
+                            <img src={images[image_index][0]} alt="not found" height="500px" />
+                        </div>
+                        <div style={{}}>
+                            <img src={images[image_index + 1][0]} alt="not found" height="500px" />
+                        </div>
                     </div>
-                    <div style={{}}>
-                        <img src={images[image_index + 1][0]} alt="not found" height="500px" />
+                    <div style={{ width: "700px", marginLeft: "150px" }}>
+                        <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
+                            <h3>How sure are you that these images are from the normal case?</h3>
+                        </div>
+                        <Box>
+                            <Slider
+                                aria-label="Labelling"
+                                defaultValue={5}
+                                getAriaValueText={valueText}
+                                valueLabelDisplay="auto"
+                                step={1}
+                                min={1}
+                                max={10}
+                                marks={labelling_marks}
+                                onChange={handleChange}
+                            />
+                        </Box>
                     </div>
                 </div>
-                <div style={{ width: "700px", marginLeft: "150px" }}>
-                    <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
-                        <h3>How sure are you that these images are from the normal case?</h3>
-                    </div>
-                    <Box>
-                        <Slider
-                            aria-label="Labelling"
-                            defaultValue={5}
-                            getAriaValueText={valueText}
-                            valueLabelDisplay="auto"
-                            step={1}
-                            min={1}
-                            max={10}
-                            marks={labelling_marks}
-                            onChange={handleChange}
-                        />
-                    </Box>
-                </div>
-            </div>
             }
         </div>
     )

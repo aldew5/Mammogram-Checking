@@ -397,7 +397,7 @@ function shuffle(array: any) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 2;
 
-        if (randomIndex % 2 !== 0){
+        if (randomIndex % 2 !== 0) {
             randomIndex += 1;
         }
 
@@ -405,12 +405,12 @@ function shuffle(array: any) {
         [array[currentIndex], array[randomIndex]] = [
             array[randomIndex], array[currentIndex]];
 
-        [array[currentIndex + 1], array[randomIndex + 1]] = 
-        [array[randomIndex + 1], array[currentIndex + 1]];
+        [array[currentIndex + 1], array[randomIndex + 1]] =
+            [array[randomIndex + 1], array[currentIndex + 1]];
     }
 
     // facing outward
-    for (let i = 0; i + 1 < images.length; i += 2){
+    for (let i = 0; i + 1 < images.length; i += 2) {
         let first: any[] = images[i];
         let second: any[] = images[i + 1];
 
@@ -422,5 +422,5 @@ function shuffle(array: any) {
 }
 
 images = shuffle(images);
-console.log(images);
+
 export default images;

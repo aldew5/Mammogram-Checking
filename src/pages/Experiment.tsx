@@ -31,7 +31,7 @@ const Experiment = ({ willingnessList, surenessList, isLoading, images,
             return () => clearTimeout(timer);
         }
     }, [displayImage, isLoading]);
-    
+
     return (
         <div className={styles.container}>
             {(!isLoading) ?

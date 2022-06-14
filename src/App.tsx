@@ -47,7 +47,6 @@ function App() {
         img.onerror = function () {
           reject();
         }
-
       });
     });
 

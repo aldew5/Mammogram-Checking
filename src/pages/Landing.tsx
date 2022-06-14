@@ -26,7 +26,7 @@ const Landing = ({ id, setUser }: LandingProps) => {
     const [email, setEmail] = useState<string>("");
 
     return (
-        <div style={{backgroundColor: "#535974", height: "800px", borderStyle:"solid", borderWidth:"0.1px"}}>
+        <div style={{ backgroundColor: "#535974", height: "800px", borderStyle: "solid", borderWidth: "0.1px" }}>
             {(showInformation) ?
                 <Information
                     setShowInformation={setShowInformation}
