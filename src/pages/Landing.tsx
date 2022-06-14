@@ -6,9 +6,10 @@ import styles from "../styles/Landing.module.css";
 
 interface LandingProps {
     setUser: Dispatch<SetStateAction<User>>;
+    id: string;
 }
 
-const Landing = ({ setUser }: LandingProps) => {
+const Landing = ({ id, setUser }: LandingProps) => {
 
     const [showInformation, setShowInformation] = useState<boolean>(false);
     const [checked, setChecked] = useState<boolean>(false);
@@ -34,6 +35,7 @@ const Landing = ({ setUser }: LandingProps) => {
                 /> :
                 <div className={styles.main}>
                     <Menu
+                        id={id}
                         setUser={setUser}
                         checked={checked}
                         setShowInformation={setShowInformation}

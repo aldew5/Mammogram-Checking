@@ -1,4 +1,5 @@
 export interface User {
+    id: string;
     age: string;
     gender: string;
     location: string;

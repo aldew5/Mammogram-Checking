@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 
 interface MenuProps {
+    id: string;
     checked: boolean;
     age: string;
     gender: string;
@@ -36,7 +37,7 @@ interface MenuProps {
     setEmail: Dispatch<SetStateAction<string>>;
 }
 
-const Menu = ({ setUser, checked, setShowInformation, age, gender, specialty, location,
+const Menu = ({ id, setUser, checked, setShowInformation, age, gender, specialty, location,
     mammo, screening, years, setting, program, models, email, setAge, setGender,
     setSpecialty, setLocation, setMammo, setScreening, setYears, setSetting, setProgram,
     setModels, setEmail }: MenuProps) => {
@@ -47,6 +48,7 @@ const Menu = ({ setUser, checked, setShowInformation, age, gender, specialty, lo
 
     const handleClick = () => {
         const user: User = {
+            id,
             age,
             gender,
             specialty,

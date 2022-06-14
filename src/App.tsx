@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { User } from "./interfaces/user";
 import { useState, useEffect } from "react";
 import images from "./util/images";
+import { v4 as uuid } from 'uuid';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [willingnessList, setWillingnessList] = useState<number[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [user, setUser] = useState<User>({
+    id: uuid(),
     age: "",
     gender: "",
     location: "",
@@ -30,32 +32,32 @@ function App() {
   const cacheImages = async (array: any[][]) => {
 
     let images: any[] = [];
-    for (let i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
       images.push(array[i][0]);
     }
 
     const promises = await images.map((src) => {
-        return new Promise<void>(function (resolve, reject) {
-            const img = new Image();
+      return new Promise<void>(function (resolve, reject) {
+        const img = new Image();
 
-            img.src = src;
-            img.onload = function () {
-                resolve();
-             }
-            img.onerror = function () {
-                reject();
-            }
+        img.src = src;
+        img.onload = function () {
+          resolve();
+        }
+        img.onerror = function () {
+          reject();
+        }
 
-        });
+      });
     });
 
     await Promise.all(promises);
     setIsLoading(false);
-}
+  }
 
-useEffect(() => {
+  useEffect(() => {
     cacheImages(images);
-}, [])
+  }, [])
 
   return (
     <Router>
@@ -64,6 +66,7 @@ useEffect(() => {
           <Route path="/" element={
             <Landing
               setUser={setUser}
+              id={user.id}
             />} />
           <Route path="/instructions" element={<Instructions />} />
           <Route path="/experiment" element={
