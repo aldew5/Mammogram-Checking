@@ -20,8 +20,10 @@
     "material-ui": "^1.0.0-beta.47",
     "mui-button": "^1.0.8",
     "react": "^18.1.0",
+    "react-csv": "^2.2.2",
     "react-dom": "^18.1.0",
     "react-google-charts": "^4.0.0",
+    "react-json-to-csv": "^1.0.4",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
@@ -53,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-csv": "^1.1.2",
     "@types/webpack-env": "^1.17.0"
   }
 }

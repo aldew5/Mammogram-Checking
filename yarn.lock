@@ -2676,6 +2676,13 @@
   "resolved" "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   "version" "1.2.4"
 
+"@types/react-csv@^1.1.2":
+  "integrity" "sha512-hCtZyXAubxBtn3Oi3I9kNAx2liRTaMtl1eWpO2M98aYkHuoSTbYO8OcZEjyr9aJJ30Xnoxj+uES3G6L6O1qgtg=="
+  "resolved" "https://registry.npmjs.org/@types/react-csv/-/react-csv-1.1.2.tgz"
+  "version" "1.1.2"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-dom@^18.0.0", "@types/react-dom@^18.0.5":
   "integrity" "sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA=="
   "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.5.tgz"
@@ -9622,6 +9629,11 @@
   "resolved" "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
   "version" "1.0.1"
 
+"json-to-csv-export@^1.0.2":
+  "integrity" "sha512-vI1wEQ0kghuOqUeraf2kcO1rMMH+qwS8QNaa8pClTHlFj18JiStLT7zD7H1ybE1mqroUO0zM4ly0M21PBt047w=="
+  "resolved" "https://registry.npmjs.org/json-to-csv-export/-/json-to-csv-export-1.1.0.tgz"
+  "version" "1.1.0"
+
 "json5@^1.0.1":
   "integrity" "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow=="
   "resolved" "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz"
@@ -12903,6 +12915,11 @@
     "regenerator-runtime" "^0.13.9"
     "whatwg-fetch" "^3.6.2"
 
+"react-csv@^2.2.2":
+  "integrity" "sha512-RG5hOcZKZFigIGE8LxIEV/OgS1vigFQT4EkaHeKgyuCbUAu9Nbd/1RYq++bJcJJ9VOqO/n9TZRADsXNDR4VEpw=="
+  "resolved" "https://registry.npmjs.org/react-csv/-/react-csv-2.2.2.tgz"
+  "version" "2.2.2"
+
 "react-dev-utils@^11.0.3":
   "integrity" "sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-11.0.4.tgz"
@@ -13019,6 +13036,13 @@
   "integrity" "sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.1.0.tgz"
   "version" "18.1.0"
+
+"react-json-to-csv@^1.0.4":
+  "integrity" "sha512-WiLLNrJ3ruyLxPN6HS5kX5EOv5I1Wj3rB2/gS3uzz3gKHTvqUMaTEVIt2lLpvLoHHWRsRy0p629qiTsTN8hemw=="
+  "resolved" "https://registry.npmjs.org/react-json-to-csv/-/react-json-to-csv-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "json-to-csv-export" "^1.0.2"
 
 "react-jss@^8.1.0":
   "integrity" "sha512-SH6XrJDJkAphp602J14JTy3puB2Zxz1FkM3bKVE8wON+va99jnUTKWnzGECb3NfIn9JPR5vHykge7K3/A747xQ=="

@@ -10,7 +10,7 @@ interface ExperimentProps {
     willingnessList: number[];
     surenessList: number[];
     isLoading: boolean;
-    images: any[];
+    images: any[][];
     setSurenessList: Dispatch<SetStateAction<number[]>>;
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
 }
@@ -31,7 +31,7 @@ const Experiment = ({ willingnessList, surenessList, isLoading, images,
             return () => clearTimeout(timer);
         }
     }, [displayImage, isLoading]);
-
+    
     return (
         <div className={styles.container}>
             {(!isLoading) ?

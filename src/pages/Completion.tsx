@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { User } from "../interfaces/user";
-import Chart from 'react-google-charts'
+import Chart from 'react-google-charts';
+import { CSVLink } from "react-csv";
+
 
 interface CompletionProps {
     user: User;
     sureness: number[];
     willingness: number[];
+    images: any[][];
 }
 
 const scatterOptions = {
@@ -15,7 +18,7 @@ const scatterOptions = {
     legend: 'none',
 }
 
-const Completion = ({ user, sureness, willingness }: CompletionProps) => {
+const Completion = ({ user, sureness, willingness, images }: CompletionProps) => {
 
     const completeTrials = async () => {
         const request = await fetch(`${process.env.REACT_APP_API_URL}/saveTrial`, {
@@ -28,29 +31,21 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
                 sureness,
                 willingness
             })
-        })
-            .then((response) => response.blob())
-            .then((blob) => {
-                // Create blob link to download
-                const url = window.URL.createObjectURL(
-                    new Blob([blob]),
-                );
-                const link: any = document.createElement('a');
-                link.href = url;
-                link.setAttribute(
-                    'download',
-                    `file.json`,
-                );
+        });
+    }
 
-                // Append to html link element page
-                document.body.appendChild(link);
+    function prepareData(user: User, sureness: number[],
+        willingness: number[], images: any[][]): string[][] {
 
-                // Start download
-                link.click();
-
-                // Clean up and remove the link
-                link.parentNode.removeChild(link);
-            });
+        let data: string[][] = [["Age", "Gender", "Location", "Specialty", "Mammo Number",
+            "Screening Number", "Years", "Setting", "Program", "Models", "Email", "Image", 
+            "Willingness", "Sureness"]]
+        for (let i = 0; i < sureness.length; i++) {
+            data.push([user.age, user.gender, user.location, user.specialty, user.mammo_number,
+            user.screening_number, user.years, user.setting, user.program, user.models, user.email,
+            images[i][1], String(sureness[i]), String(willingness[i])]);
+        }
+        return data;
     }
 
     let scatterData: any[][] = [['AI Rating', 'Willingness']];
@@ -89,6 +84,9 @@ const Completion = ({ user, sureness, willingness }: CompletionProps) => {
                     />
                 </div>
             </div>
+            <CSVLink data={prepareData(user, sureness, willingness, images)}>
+                Export to CSV
+            </CSVLink>
         </div>
     )
 }

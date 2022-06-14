@@ -27,8 +27,14 @@ function App() {
     email: ""
   });
 
-  const cacheImages = async (array: any[]) => {
-    const promises = await array.map((src) => {
+  const cacheImages = async (array: any[][]) => {
+
+    let images: any[] = [];
+    for (let i = 0; i < array.length; i++){
+      images.push(array[i][0]);
+    }
+
+    const promises = await images.map((src) => {
         return new Promise<void>(function (resolve, reject) {
             const img = new Image();
 
@@ -74,6 +80,7 @@ useEffect(() => {
               user={user}
               sureness={surenessList}
               willingness={willingnessList}
+              images={images}
             />
           } />
         </Routes>
