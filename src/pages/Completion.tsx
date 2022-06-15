@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { User } from "../interfaces/user";
 import Chart from 'react-google-charts';
 import { CSVLink } from "react-csv";
+import styles from "../styles/Completion.module.css";
 
 
 interface CompletionProps {
@@ -64,10 +65,7 @@ const Completion = ({ user, sureness, willingness, images }: CompletionProps) =>
 
     return (
         <div style={{ paddingTop: "50px", backgroundColor: "#535974", height: "740px" }}>
-            <div style={{
-                backgroundColor: "white", width: "1000px", marginLeft: "220px",
-                paddingTop: "30px", paddingBottom: "50px", borderStyle: "solid", borderRadius: "8px"
-            }}>
+            <div className={styles.text}>
                 <div>
                     <h1>Thank you for completing the experiment!</h1>
                     <p>There were XX path-proven cancers in this set,

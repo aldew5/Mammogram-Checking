@@ -1,0 +1,9 @@
+.text {
+    background-color: white;
+    width: 1000px;
+    margin-left: 220px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-style: solid;
+    border-radius: 8px;
+}

@@ -56,7 +56,7 @@ function App() {
 
   useEffect(() => {
     cacheImages(images);
-  }, [])
+  }, []);
 
   return (
     <Router>
