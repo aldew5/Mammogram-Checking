@@ -7,6 +7,7 @@ import {
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
+
 interface ImageProps {
     index: number;
     images: any[];

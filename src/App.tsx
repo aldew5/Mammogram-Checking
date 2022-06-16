@@ -13,7 +13,7 @@ function App() {
 
   const [surenessList, setSurenessList] = useState<number[]>([]);
   const [willingnessList, setWillingnessList] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<User>({
     id: uuid(),
     age: "",
@@ -53,10 +53,6 @@ function App() {
     await Promise.all(promises);
     setIsLoading(false);
   }
-
-  useEffect(() => {
-    cacheImages(images);
-  }, []);
 
   return (
     <Router>
