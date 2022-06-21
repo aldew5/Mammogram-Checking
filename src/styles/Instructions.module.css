@@ -10,18 +10,10 @@
     font-size: 23px;
 }
 
-.container {
-    background-color: #535974;
-    height: 790px;
-    border-style: solid;
-    align-content: center;
-    border-width: 0.1px;
-}
-
 .instructions {
     margin-left: 65px;
     background-color: white;
     margin-top: 30px;
     border-style: solid;
-    width: 1300px;
+    margin-right: 65px;
 }

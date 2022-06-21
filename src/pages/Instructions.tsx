@@ -8,7 +8,7 @@ const Instructions = () => {
     const navigate = useNavigate();
 
     return (
-        <div className={styles.container}>
+        <div>
             <div className={styles.instructions}>
                 <p className={styles.title}>Instructions:</p>
                 <p className={styles.text}>
