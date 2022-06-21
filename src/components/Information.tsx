@@ -32,20 +32,24 @@ const Information = ({ checked, setChecked, setShowInformation }: InformationPro
     return (
         <div className={styles.main}>
             <div className={styles.terms}>
-                <img src={File1} alt="not found" width="1000" />
-                <img src={File2} alt="not found" width="1000" />
-                <img src={File3} alt="not found" width="1000" />
+                <img src={File1} alt="not found" width="100%" />
+                <img src={File2} alt="not found" width="100%" />
+                <img src={File3} alt="not found" width="100%" />
             </div><br />
-            <div style={{ width: "100%", overflow: "hidden", marginBottom: "2rem" }}>
-                <div style={{ textAlign: "left", marginLeft: "70px", float: "left", width: "700px" }}>
-                    <p><b>I have read the Research Study Information Sheet and I agree to participate in this study</b></p>
-                </div>
-                <div style={{ marginRight: "150px", marginTop: "4px" }}>
-                    <Checkbox onChange={handleChange} checked={checked} />
+            <div style={{ display: "table", width: "100%", marginBottom: "2rem" }}>
+                <div style={{display: "table-row"}}>
+                    <div style={{ textAlign: "left", display: "table-cell", width: "700px", paddingLeft: "100px" }}>
+                        <p>
+                            <b>I have read the Research Study Information Sheet and I agree to participate in this study</b>
+                        </p>
+                    </div>
+                    <div style={{ display: "table-cell", marginTop: "4px", paddingRight: "100px"}}>
+                        <Checkbox onChange={handleChange} checked={checked} />
+                    </div>
                 </div>
             </div>
             {(showWarning) ?
-                <div style={{ width: "900px", marginBottom: "1rem", marginLeft: "50px" }}>
+                <div style={{ width: "90%", marginBottom: "1rem", marginLeft: "40px" }}>
                     <Alert severity="warning">
                         You have not agreed to participate in the study. Please read the information sheet
                         above and then check the box to continue.

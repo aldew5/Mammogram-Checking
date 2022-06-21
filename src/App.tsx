@@ -28,32 +28,7 @@ function App() {
     models: "",
     email: ""
   });
-
-  const cacheImages = async (array: any[][]) => {
-
-    let images: any[] = [];
-    for (let i = 0; i < array.length; i++) {
-      images.push(array[i][0]);
-    }
-
-    const promises = await images.map((src) => {
-      return new Promise<void>(function (resolve, reject) {
-        const img = new Image();
-
-        img.src = src;
-        img.onload = function () {
-          resolve();
-        }
-        img.onerror = function () {
-          reject();
-        }
-      });
-    });
-
-    await Promise.all(promises);
-    setIsLoading(false);
-  }
-
+  
   return (
     <Router>
       <div className="App">
