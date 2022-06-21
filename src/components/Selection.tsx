@@ -114,10 +114,10 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                 :
                 <div className={styles.selection}>
                     <div style={{
-                        marginBottom: "2rem", marginLeft: "150px", width: "700px",
-                        paddingTop: "2rem"
+                        marginBottom: "2rem", marginLeft: "150px",
+                        paddingTop: "2rem", marginRight: "150px"
                     }}>
-                        <div style={{ width: "700px" }}>
+                        <div style={{ width: "100%" }}>
                             {(displayWilling) ?
                                 <div>
                                     <div style={{ marginBottom: "2rem" }}>

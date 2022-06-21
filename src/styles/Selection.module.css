@@ -10,8 +10,8 @@
 
 .selection {
     background-color: white;
-    width: 1000px;
     margin-left: 220px;
     padding-bottom: 30px;
     border-radius: 8px;
+    margin-right: 220px;
 }

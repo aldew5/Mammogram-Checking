@@ -64,7 +64,7 @@ const Completion = ({ user, sureness, willingness, images }: CompletionProps) =>
     }, []);
 
     return (
-        <div style={{ paddingTop: "50px", backgroundColor: "#535974", height: "740px" }}>
+        <div style={{ paddingTop: "50px" }}>
             <div className={styles.text}>
                 <div>
                     <h1>Thank you for completing the experiment!</h1>
