@@ -33,7 +33,7 @@ const Instructions = () => {
                 </p>
                 <p className={styles.text}>A sample trial image is shown below:</p>
                 <div style={{ margin: "auto" }}>
-                    <img src={Normal1} alt="not found" width="250px" />
+                    <img src={Normal1} alt="not found" width="20%" />
                 </div>
                 <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
                     <Button
