@@ -59,7 +59,7 @@ const Completion = ({ user, sureness, willingness, images, ratings }: Completion
 
     useEffect(() => {
         for (let i = 0; i < sureness.length; i++) {
-            scatterData.push([sureness[i], willingness[i]]);
+            scatterData.push([ratings[i], willingness[i]]);
         }
         completeTrials();
     }, []);
