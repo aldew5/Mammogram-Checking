@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import ClearIcon from '@mui/icons-material/Clear';
 import styles from "../styles/Selection.module.css";
 import EscapeCard from "./EscapeCard";
+import scores from "../util/scores";
 
 
 interface SelectionProps {
@@ -24,6 +25,8 @@ interface SelectionProps {
     surenessList: number[];
     index: number;
     length: number;
+    images: any[];
+    imageIndex: number;
 }
 
 interface Mark {
@@ -33,7 +36,7 @@ interface Mark {
 
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     willingnessList, surenessList, index, length, willingness, setWillingness,
-    sureness, setSureness }: SelectionProps) => {
+    sureness, setSureness, imageIndex, images }: SelectionProps) => {
 
     const navigate = useNavigate();
     const [displayWilling, setDisplayWilling] = useState<boolean>(true);
@@ -144,7 +147,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                                 :
                                 <div>
                                     <div style={{ marginBottom: "2rem" }}>
-                                        <h3>The computer has rated these images X out of 10 (10: highest probabilty that
+                                        <h3>The computer has rated these images {scores[images[imageIndex][1]]} out of 10 (10: highest probabilty that
                                             there is cancer present). How willing would you be to let the computer make
                                             the decision about this case alone without having you look at it?
                                         </h3>

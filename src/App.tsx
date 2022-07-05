@@ -14,6 +14,7 @@ function App() {
 
   const [surenessList, setSurenessList] = useState<number[]>([]);
   const [willingnessList, setWillingnessList] = useState<number[]>([]);
+  const [ratings, setRatings] = useState<number[]>([]);
   const [user, setUser] = useState<User>({
     id: uuid(),
     age: "",
@@ -46,7 +47,8 @@ function App() {
               setSurenessList={setSurenessList}
               setWillingnessList={setWillingnessList}
               images={images}
-              scores={scores}
+              ratings={ratings}
+              setRatings={setRatings}
             />} />
           <Route path="/completion" element={
             <Completion
@@ -54,6 +56,7 @@ function App() {
               sureness={surenessList}
               willingness={willingnessList}
               images={images}
+              ratings={ratings}
             />
           } />
         </Routes>

@@ -6,23 +6,27 @@ import {
 } from "react";
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import scores from "../util/scores";
 
 
 interface ImageProps {
     index: number;
     images: any[];
     sureness: number;
+    imageIndex: number;
+    ratings: number[];
     setIndex: Dispatch<SetStateAction<number>>;
+    setImageIndex: Dispatch<SetStateAction<number>>;
     setSureness: Dispatch<SetStateAction<number>>;
+    setRatings: Dispatch<SetStateAction<number[]>>;
 }
 interface Mark {
     value: number;
     label: string;
 }
 
-let image_index: number;
-
-const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProps) => {
+const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness, 
+        setImageIndex, setIndex, setRatings }: ImageProps) => {
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -55,7 +59,11 @@ const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProp
     }, []);
 
     useEffect(() => {
-        image_index = index;
+        setImageIndex(index);
+        let rate: number[] = ratings;
+        rate.push(scores[images[imageIndex][1]])
+        setRatings(rate);
+
         setIndex(index + 2);
     }, []);
 
@@ -65,10 +73,10 @@ const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProp
                 <div>
                     <div style={{ overflow: "hidden" }}>
                         <div style={{ width: "500px", float: "left" }}>
-                            <img src={images[image_index][0]} alt="not found" height="500px" />
+                            <img src={images[imageIndex][0]} alt="not found" height="500px" />
                         </div>
                         <div>
-                            <img src={images[image_index + 1][0]} alt="not found" height="500px" />
+                            <img src={images[imageIndex + 1][0]} alt="not found" height="500px" />
                         </div>
                     </div>
                     <div style={{ width: "700px", marginLeft: "150px" }}>

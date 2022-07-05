@@ -8,18 +8,20 @@ interface ExperimentProps {
     willingnessList: number[];
     surenessList: number[];
     images: any[][];
-    scores: any;
+    ratings: number[];
+    setRatings: Dispatch<SetStateAction<number[]>>;
     setSurenessList: Dispatch<SetStateAction<number[]>>;
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
 }
 
-const Experiment = ({ willingnessList, surenessList, images, scores,
-    setSurenessList, setWillingnessList }: ExperimentProps) => {
+const Experiment = ({ willingnessList, surenessList, images, ratings,
+    setSurenessList, setWillingnessList, setRatings }: ExperimentProps) => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
     const [index, setIndex] = useState<number>(0);
     const [willingness, setWillingness] = useState<number>(5);
     const [sureness, setSureness] = useState<number>(4);
+    const [imageIndex, setImageIndex] = useState<number>(0);
 
     useEffect(() => {
         if (displayImage) {
@@ -41,6 +43,10 @@ const Experiment = ({ willingnessList, surenessList, images, scores,
                             images={images}
                             sureness={sureness}
                             setSureness={setSureness}
+                            imageIndex={imageIndex}
+                            setImageIndex={setImageIndex}
+                            setRatings={setRatings}
+                            ratings={ratings}
                         />
                     </div>
                     :
@@ -57,6 +63,8 @@ const Experiment = ({ willingnessList, surenessList, images, scores,
                             setWillingness={setWillingness}
                             sureness={sureness}
                             setSureness={setSureness}
+                            imageIndex={imageIndex}
+                            images={images}
                         />
                     </div>
                 }

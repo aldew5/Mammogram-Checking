@@ -10,6 +10,7 @@ interface CompletionProps {
     sureness: number[];
     willingness: number[];
     images: any[][];
+    ratings: number[];
 }
 
 const scatterOptions = {
@@ -19,7 +20,7 @@ const scatterOptions = {
     legend: 'none',
 }
 
-const Completion = ({ user, sureness, willingness, images }: CompletionProps) => {
+const Completion = ({ user, sureness, willingness, images, ratings }: CompletionProps) => {
 
     const completeTrials = async () => {
         const request = await fetch(`${process.env.REACT_APP_API_URL}/saveTrial`, {
