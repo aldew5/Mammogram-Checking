@@ -19,6 +19,7 @@ interface SelectionProps {
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
     setSureness: Dispatch<SetStateAction<number>>;
     setWillingness: Dispatch<SetStateAction<number>>;
+    setCancerScores: Dispatch<SetStateAction<number[]>>;
     sureness: number;
     willingness: number;
     willingnessList: number[];
@@ -27,6 +28,7 @@ interface SelectionProps {
     length: number;
     images: any[];
     imageIndex: number;
+    cancerScores: number[];
 }
 
 interface Mark {
@@ -36,7 +38,7 @@ interface Mark {
 
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     willingnessList, surenessList, index, length, willingness, setWillingness,
-    sureness, setSureness, imageIndex, images }: SelectionProps) => {
+    sureness, setSureness, imageIndex, images, cancerScores, setCancerScores}: SelectionProps) => {
 
     const navigate = useNavigate();
     const [displayWilling, setDisplayWilling] = useState<boolean>(true);
@@ -89,9 +91,16 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
         willing.push(willingness);
         setWillingnessList(willing);
 
+        if (images[imageIndex][2] === 1) {
+            let cancers: number[] = cancerScores;
+            cancers.push(sureness);
+            setCancerScores(cancers);
+        }
+
         if (index >= length) {
             navigate("/completion");
         }
+
     }
 
     const labelling_marks: Mark[] = [

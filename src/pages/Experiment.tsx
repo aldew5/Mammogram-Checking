@@ -9,13 +9,16 @@ interface ExperimentProps {
     surenessList: number[];
     images: any[][];
     ratings: number[];
+    cancerScores: number[];
     setRatings: Dispatch<SetStateAction<number[]>>;
     setSurenessList: Dispatch<SetStateAction<number[]>>;
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
+    setCancerScores: Dispatch<SetStateAction<number[]>>;
 }
 
 const Experiment = ({ willingnessList, surenessList, images, ratings,
-    setSurenessList, setWillingnessList, setRatings }: ExperimentProps) => {
+    cancerScores, setCancerScores, setSurenessList, setWillingnessList, 
+    setRatings }: ExperimentProps) => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
     const [index, setIndex] = useState<number>(0);
@@ -65,6 +68,8 @@ const Experiment = ({ willingnessList, surenessList, images, ratings,
                             setSureness={setSureness}
                             imageIndex={imageIndex}
                             images={images}
+                            setCancerScores={setCancerScores}
+                            cancerScores={cancerScores}
                         />
                     </div>
                 }

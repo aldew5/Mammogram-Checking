@@ -6,7 +6,6 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { User } from "./interfaces/user";
 import { useState } from "react";
 import images from "./util/images";
-import scores from "./util/scores";
 import { v4 as uuid } from 'uuid';
 import './App.css';
 
@@ -15,6 +14,7 @@ function App() {
   const [surenessList, setSurenessList] = useState<number[]>([]);
   const [willingnessList, setWillingnessList] = useState<number[]>([]);
   const [ratings, setRatings] = useState<number[]>([]);
+  const [cancerScores, setCancerScores] = useState<number[]>([]);
   const [user, setUser] = useState<User>({
     id: uuid(),
     age: "",
@@ -29,7 +29,9 @@ function App() {
     models: "",
     email: ""
   });
-  
+
+  const num_cancers = 1;
+
   return (
     <Router>
       <div className="App">
@@ -49,6 +51,8 @@ function App() {
               images={images}
               ratings={ratings}
               setRatings={setRatings}
+              setCancerScores={setCancerScores}
+              cancerScores={cancerScores}
             />} />
           <Route path="/completion" element={
             <Completion
@@ -57,6 +61,8 @@ function App() {
               willingness={willingnessList}
               images={images}
               ratings={ratings}
+              num_cancers={num_cancers}
+              cancerScores={cancerScores}
             />
           } />
         </Routes>

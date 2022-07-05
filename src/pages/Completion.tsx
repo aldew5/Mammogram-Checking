@@ -11,6 +11,8 @@ interface CompletionProps {
     willingness: number[];
     images: any[][];
     ratings: number[];
+    num_cancers: number;
+    cancerScores: number[];
 }
 
 const scatterOptions = {
@@ -20,7 +22,8 @@ const scatterOptions = {
     legend: 'none',
 }
 
-const Completion = ({ user, sureness, willingness, images, ratings }: CompletionProps) => {
+const Completion = ({ user, sureness, willingness, images, ratings,
+                num_cancers, cancerScores }: CompletionProps) => {
 
     const completeTrials = async () => {
         const request = await fetch(`${process.env.REACT_APP_API_URL}/saveTrial`, {
@@ -69,8 +72,8 @@ const Completion = ({ user, sureness, willingness, images, ratings }: Completion
             <div className={styles.text}>
                 <div>
                     <h1>Thank you for completing the experiment!</h1>
-                    <p>There were XX path-proven cancers in this set,
-                        you rated them A, B, C...
+                    <p>There were {num_cancers} path-proven cancers in this set,
+                        you rated them {cancerScores[0]}, {cancerScores[1]}.
                     </p>
                     <p>
                         Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
