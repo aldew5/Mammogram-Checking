@@ -46,6 +46,7 @@ function App() {
               setSurenessList={setSurenessList}
               setWillingnessList={setWillingnessList}
               images={images}
+              scores={scores}
             />} />
           <Route path="/completion" element={
             <Completion

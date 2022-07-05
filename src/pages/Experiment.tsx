@@ -1,7 +1,5 @@
 import Mammogram from "../components/Mammogram";
 import Selection from "../components/Selection";
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
 import { useState, useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/Experiment.module.css";
@@ -10,11 +8,12 @@ interface ExperimentProps {
     willingnessList: number[];
     surenessList: number[];
     images: any[][];
+    scores: any;
     setSurenessList: Dispatch<SetStateAction<number[]>>;
     setWillingnessList: Dispatch<SetStateAction<number[]>>;
 }
 
-const Experiment = ({ willingnessList, surenessList, images,
+const Experiment = ({ willingnessList, surenessList, images, scores,
     setSurenessList, setWillingnessList }: ExperimentProps) => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);
