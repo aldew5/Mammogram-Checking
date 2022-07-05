@@ -67,7 +67,7 @@ const Mammogram = ({ index, images, sureness, setSureness, setIndex }: ImageProp
                         <div style={{ width: "500px", float: "left" }}>
                             <img src={images[image_index][0]} alt="not found" height="500px" />
                         </div>
-                        <div style={{}}>
+                        <div>
                             <img src={images[image_index + 1][0]} alt="not found" height="500px" />
                         </div>
                     </div>
