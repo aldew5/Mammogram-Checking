@@ -1,0 +1,19 @@
+ID: 2100054800
+View: mr
+Case: 21000548
+Exam: normal
+Pathology: 0
+Disease: benign
+Indication: recall
+Prior_screen: 0
+Prior_sympt: 0
+Recall: 1
+Outcome: FP
+CC: 1
+Digitizer: DIRECT
+Date: 20120109
+Pixelsize: 200
+GTRVersion: 3
+GTRDate: 20150712
+Nregions: 0
+

@@ -1,0 +1,19 @@
+ID: 2102450700
+View: ml
+Case: 21024507
+Exam: normal
+Pathology: 0
+Disease: malignant
+Indication: screening
+Prior_screen: 0
+Prior_sympt: 0
+Recall: 0
+Outcome: FNS
+CC: 1
+Digitizer: DIRECT
+Date: 20120109
+Pixelsize: 200
+GTRVersion: 3
+GTRDate: 20160727
+Nregions: 0
+

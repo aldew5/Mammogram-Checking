@@ -4,7 +4,7 @@ import Instructions from "./pages/Instructions";
 import Completion from "./pages/Completion";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { User } from "./interfaces/user";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import images from "./util/images";
 import { v4 as uuid } from 'uuid';
 import './App.css';
