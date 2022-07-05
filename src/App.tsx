@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { User } from "./interfaces/user";
 import { useState } from "react";
 import images from "./util/images";
+import scores from "./util/scores";
 import { v4 as uuid } from 'uuid';
 import './App.css';
 
@@ -13,7 +14,6 @@ function App() {
 
   const [surenessList, setSurenessList] = useState<number[]>([]);
   const [willingnessList, setWillingnessList] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<User>({
     id: uuid(),
     age: "",
@@ -45,7 +45,6 @@ function App() {
               surenessList={surenessList}
               setSurenessList={setSurenessList}
               setWillingnessList={setWillingnessList}
-              isLoading={isLoading}
               images={images}
             />} />
           <Route path="/completion" element={
