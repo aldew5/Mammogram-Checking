@@ -4,7 +4,6 @@ import Chart from 'react-google-charts';
 import { CSVLink } from "react-csv";
 import styles from "../styles/Completion.module.css";
 
-
 interface CompletionProps {
     user: User;
     sureness: number[];
