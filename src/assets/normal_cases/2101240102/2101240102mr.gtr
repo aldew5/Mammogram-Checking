@@ -1,0 +1,19 @@
+ID: 2101240102
+View: mr
+Case: 21012401
+Exam: normal
+Pathology: 0
+Disease: benign
+Indication: recall
+Prior_screen: 0
+Prior_sympt: 0
+Recall: 1
+Outcome: FP
+CC: 1
+Digitizer: DIRECT
+Date: 20130827
+Pixelsize: 200
+GTRVersion: 3
+GTRDate: 20160727
+Nregions: 0
+
