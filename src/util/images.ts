@@ -350,7 +350,17 @@ import {
     Normal349,
     Normal350,
     Cancer1,
-    Cancer2
+    Cancer2,
+    Cancer3,
+    Cancer4,
+    Cancer5,
+    Cancer6, 
+    Cancer7, 
+    Cancer8,
+    Cancer9,
+    Cancer10,
+    Cancer11, 
+    Cancer12
 } from "../assets";
 
 let images: any[][] = [
@@ -705,7 +715,17 @@ let images: any[][] = [
     [Normal349, 2100754803, 0],
     [Normal350, 2100754803, 0],
     [Cancer1, 2100011202, 1],
-    [Cancer2, 2100011202, 1]];
+    [Cancer2, 2100011202, 1],
+    [Cancer3, 2100749201, 1],
+    [Cancer4, 2100749201, 1],
+    [Cancer5, 2101097500, 1],
+    [Cancer6, 2101097500, 1],
+    [Cancer7, 2103297000, 1],
+    [Cancer8, 2103297000, 1],
+    [Cancer9, 2104076402, 1],
+    [Cancer10, 2104076402, 1],
+    [Cancer11, 2104162802, 1],
+    [Cancer12, 2104162802, 1]];
 
 // modified Fisher-Yates Shuffle
 function shuffle(array: any) {

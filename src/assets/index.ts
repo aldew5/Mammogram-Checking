@@ -1,5 +1,15 @@
-import Cancer1 from "../assets/cancer_cases/2100011202/p2100011202ml.jpeg";
-import Cancer2 from "../assets/cancer_cases/2100011202/p2100011202mr.jpeg";
+import Cancer1 from "./cancer_cases/2100011202/p2100011202ml.jpeg";
+import Cancer2 from "./cancer_cases/2100011202/p2100011202mr.jpeg";
+import Cancer3 from "./cancer_cases/2100749201/p2100749201ml.jpeg";
+import Cancer4 from "./cancer_cases/2100749201/p2100749201mr.jpeg";
+import Cancer5 from "./cancer_cases/2101097500/p2101097500ml.jpeg";
+import Cancer6 from "./cancer_cases/2101097500/p2101097500mr.jpeg";
+import Cancer7 from "./cancer_cases/2103297000/p2103297000ml.jpeg";
+import Cancer8 from "./cancer_cases/2103297000/p2103297000mr.jpeg";
+import Cancer9 from "./cancer_cases/2104076402/p2104076402ml.jpeg";
+import Cancer10 from "./cancer_cases/2104076402/p2104076402mr.jpeg";
+import Cancer11 from "./cancer_cases/2104162802/p2104162802ml.jpeg";
+import Cancer12 from "./cancer_cases/2104162802/p2104162802mr.jpeg";
 
 import Normal1 from "./normal_cases/2101155904/p2101155904ml.jpeg";
 import Normal2 from "./normal_cases/2101155904/p2101155904mr.jpeg";
@@ -705,5 +715,15 @@ export {
     Normal349,
     Normal350,
     Cancer1,
-    Cancer2
+    Cancer2,
+    Cancer3,
+    Cancer4,
+    Cancer5,
+    Cancer6, 
+    Cancer7, 
+    Cancer8,
+    Cancer9,
+    Cancer10,
+    Cancer11, 
+    Cancer12
 };
