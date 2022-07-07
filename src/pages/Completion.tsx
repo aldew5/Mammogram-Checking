@@ -60,7 +60,7 @@ const Completion = ({ user, sureness, willingness, images, ratings,
     let scatterData: any[][] = [['AI Rating', 'Willingness']];
 
     useEffect(() => {
-        for (let i = 0; i < sureness.length; i++) {
+        for (let i = 0; i < ratings.length; i++) {
             scatterData.push([ratings[i], willingness[i]]);
         }
         completeTrials();
