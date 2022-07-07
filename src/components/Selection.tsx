@@ -114,17 +114,17 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
 
     return (
         <div>
-            {(!clicked) ?
-                <div className={styles.clear}>
-                    <ClearIcon onClick={handleClear} />
-                </div> : <></>
-            }
             {(clicked) ?
                 <div style={{ position: "absolute" }}>
                     <EscapeCard setClicked={setClicked} />
                 </div>
                 :
                 <div className={styles.selection}>
+                    {(!clicked) ?
+                        <div className={styles.clear}>
+                            <ClearIcon onClick={handleClear} />
+                        </div> : <></>
+                    }
                     <div style={{
                         marginBottom: "2rem", marginLeft: "150px",
                         paddingTop: "2rem", marginRight: "150px"
