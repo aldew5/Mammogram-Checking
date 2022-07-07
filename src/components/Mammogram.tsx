@@ -25,8 +25,8 @@ interface Mark {
     label: string;
 }
 
-const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness, 
-        setImageIndex, setIndex, setRatings }: ImageProps) => {
+const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness,
+    setImageIndex, setIndex, setRatings }: ImageProps) => {
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
 

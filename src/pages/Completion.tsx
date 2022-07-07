@@ -22,7 +22,7 @@ const scatterOptions = {
 }
 
 const Completion = ({ user, sureness, willingness, images, ratings,
-                num_cancers, cancerScores }: CompletionProps) => {
+    num_cancers, cancerScores }: CompletionProps) => {
 
     const completeTrials = async () => {
         const request = await fetch(`${process.env.REACT_APP_API_URL}/saveTrial`, {

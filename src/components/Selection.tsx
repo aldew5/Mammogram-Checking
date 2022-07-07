@@ -38,7 +38,7 @@ interface Mark {
 
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     willingnessList, surenessList, index, length, willingness, setWillingness,
-    sureness, setSureness, imageIndex, images, cancerScores, setCancerScores}: SelectionProps) => {
+    sureness, setSureness, imageIndex, images, cancerScores, setCancerScores }: SelectionProps) => {
 
     const navigate = useNavigate();
     const [displayWilling, setDisplayWilling] = useState<boolean>(true);

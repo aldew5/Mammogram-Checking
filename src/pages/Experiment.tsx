@@ -17,7 +17,7 @@ interface ExperimentProps {
 }
 
 const Experiment = ({ willingnessList, surenessList, images, ratings,
-    cancerScores, setCancerScores, setSurenessList, setWillingnessList, 
+    cancerScores, setCancerScores, setSurenessList, setWillingnessList,
     setRatings }: ExperimentProps) => {
 
     const [displayImage, setDisplayImage] = useState<boolean>(true);

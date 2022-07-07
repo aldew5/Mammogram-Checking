@@ -37,13 +37,13 @@ const Information = ({ checked, setChecked, setShowInformation }: InformationPro
                 <img src={File3} alt="not found" width="100%" />
             </div><br />
             <div style={{ display: "table", width: "100%", marginBottom: "2rem" }}>
-                <div style={{display: "table-row"}}>
+                <div style={{ display: "table-row" }}>
                     <div style={{ textAlign: "left", display: "table-cell", width: "700px", paddingLeft: "100px" }}>
                         <p>
                             <b>I have read the Research Study Information Sheet and I agree to participate in this study</b>
                         </p>
                     </div>
-                    <div style={{ display: "table-cell", marginTop: "4px", paddingRight: "100px"}}>
+                    <div style={{ display: "table-cell", marginTop: "4px", paddingRight: "100px" }}>
                         <Checkbox onChange={handleChange} checked={checked} />
                     </div>
                 </div>
