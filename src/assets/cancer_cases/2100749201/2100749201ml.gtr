@@ -1,0 +1,19 @@
+ID: 2100749201
+View: ml
+Case: 21007492
+Exam: normal
+Pathology: 0
+Disease: malignant
+Indication: screening
+Prior_screen: 0
+Prior_sympt: 0
+Recall: 0
+Outcome: FNI
+CC: 1
+Digitizer: DIRECT
+Date: 20060104
+Pixelsize: 200
+GTRVersion: 3
+GTRDate: 20160727
+Nregions: 0
+

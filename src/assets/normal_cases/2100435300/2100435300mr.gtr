@@ -1,0 +1,19 @@
+ID: 2100435300
+View: mr
+Case: 21004353
+Exam: normal
+Pathology: 0
+Disease: benign
+Indication: recall
+Prior_screen: 2
+Prior_sympt: 0
+Recall: 1
+Outcome: FP
+CC: 1
+Digitizer: DIRECT
+Date: 20080829
+Pixelsize: 200
+GTRVersion: 3
+GTRDate: 20160727
+Nregions: 0
+

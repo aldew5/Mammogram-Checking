@@ -1,0 +1,19 @@
+ID: 2101097500
+View: mr
+Case: 21010975
+Exam: normal
+Pathology: 0
+Disease: malignant
+Indication: recall
+Prior_screen: 0
+Prior_sympt: 0
+Recall: 1
+Outcome: TP
+CC: 1
+Digitizer: DIRECT
+Date: 20120619
+Pixelsize: 200
+GTRVersion: 3
+GTRDate: 20150712
+Nregions: 0
+
