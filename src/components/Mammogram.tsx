@@ -40,16 +40,18 @@ const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness,
     }
 
     const handleChange = (event: Event, new_value: number | number[]) => {
+        // handling an array (quirk of the slider class)
         if (Array.isArray(new_value)) {
             return;
         }
-
+        // update the sureness value
         if (new_value !== sureness) {
             setSureness(new_value);
         }
     }
 
     useEffect(() => {
+        // give the image a tenth of a second to be fetched
         if (isLoading) {
             const timer = setTimeout(() => {
                 setIsLoading(false);

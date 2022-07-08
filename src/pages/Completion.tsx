@@ -46,7 +46,8 @@ const Completion = ({ user, sureness, willingness, images, ratings,
 
     function prepareData(user: User, sureness: number[],
         willingness: number[], images: any[][], ratings: number[]): string[][] {
-
+        
+        // csv file column headers
         let data: string[][] = [["ID", "Age", "Gender", "Location", "Specialty", "Mammo Number",
             "Screening Number", "Years", "Setting", "Program", "Models", "Email", "Case", "AI Rating",
             "Willingness", "Sureness"]]
@@ -73,6 +74,7 @@ const Completion = ({ user, sureness, willingness, images, ratings,
         for (let i = 0; i < willingness.length; i++) {
             secondScatterData.push([willingness[i], sureness[i]]);
         }
+        // sends data to the backend
         completeTrials();
     }, []);
 

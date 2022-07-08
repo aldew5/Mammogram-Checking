@@ -22,9 +22,13 @@ const Information = ({ checked, setChecked, setShowInformation }: InformationPro
     }
 
     const handleClick = () => {
+        // if they checked the box we don't show the information
+        // (bring them back to the menu)
         if (checked) {
             setShowInformation(false);
         } else {
+            // show a warning because they didn't click
+            // the box
             setShowWarning(true);
         }
     }

@@ -27,6 +27,7 @@ const Experiment = ({ willingnessList, surenessList, images, ratings,
     const [imageIndex, setImageIndex] = useState<number>(0);
 
     useEffect(() => {
+        // display images for 5 seconds
         if (displayImage) {
             const timer = setTimeout(() => {
                 setDisplayImage(false);

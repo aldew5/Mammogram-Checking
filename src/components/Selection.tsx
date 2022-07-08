@@ -43,11 +43,12 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     const navigate = useNavigate();
     const [displayWilling, setDisplayWilling] = useState<boolean>(true);
     const [clicked, setClicked] = useState<boolean>(false);
-
+        
     function valueText(value: number) {
         return `${value}`
     }
 
+    // quitting the experiment
     const handleClear = () => {
         if (!clicked) {
             setClicked(true);
@@ -55,7 +56,8 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
             navigate("/completion");
         }
     }
-
+    
+    // handle change for the first slider
     const handleChange1 = (event: Event, new_value: number | number[]) => {
         if (Array.isArray(new_value)) {
             return;
@@ -65,7 +67,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
             setSureness(new_value);
         }
     }
-
+    // changes for the second slider
     const handleChange2 = (event: Event, new_value: number | number[]) => {
         if (Array.isArray(new_value)) {
             return;
@@ -84,6 +86,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
         setDisplayWilling(false);
     }
 
+    // called when the second choice is confirmed
     const handleClick2 = () => {
         setDisplayImage(true);
 
@@ -91,16 +94,18 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
         willing.push(willingness);
         setWillingnessList(willing);
 
+        // if the image has a cancer, save the radiologist's 
+        // rating of it
         if (images[imageIndex][2] === 1) {
             let cancers: number[] = cancerScores;
             cancers.push(sureness);
             setCancerScores(cancers);
         }
-
+        // we've gone through all the images so terminate
+        // the experiment
         if (index >= length) {
             navigate("/completion");
         }
-
     }
 
     const labelling_marks: Mark[] = [
