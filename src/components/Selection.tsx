@@ -12,7 +12,6 @@ import styles from "../styles/Selection.module.css";
 import EscapeCard from "./EscapeCard";
 import scores from "../util/scores";
 
-
 interface SelectionProps {
     setDisplayImage: Dispatch<SetStateAction<boolean>>;
     setSurenessList: Dispatch<SetStateAction<number[]>>;
