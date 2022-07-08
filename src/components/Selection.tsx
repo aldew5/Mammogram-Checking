@@ -130,11 +130,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                             <ClearIcon onClick={handleClear} />
                         </div> : <></>
                     }
-                    <div style={{
-                        marginBottom: "2rem", marginLeft: "15%",
-                        paddingTop: "2rem", marginRight: "15%",
-                        maxWidth: "900px"
-                    }}>
+                    <div className={styles.text}>
                         <div>
                             {(displayWilling) ?
                                 <div>

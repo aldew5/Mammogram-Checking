@@ -65,8 +65,8 @@ const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness,
         let rate: number[] = ratings;
         rate.push(scores[images[index][1]]);
         console.log("rating", images[index][1], scores[images[index][1]]);
+        
         setRatings(rate);
-
         setIndex(index + 2);
     }, []);
 
