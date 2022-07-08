@@ -9,9 +9,9 @@
 }
 
 .selection {
+    margin: auto;
     background-color: white;
-    margin-left: 220px;
     padding-bottom: 30px;
     border-radius: 8px;
-    width: 1000px;
+    max-width: 1000px;
 }

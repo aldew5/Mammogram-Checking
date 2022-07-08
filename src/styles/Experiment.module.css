@@ -4,9 +4,9 @@
 }
 
 .image {
-    margin-left: 220px;
-    margin-right: 220px;
+    max-width: 950px;
     height: 650px;
     background-color: white;
     padding-top: 50px;
+    margin: auto;
 }

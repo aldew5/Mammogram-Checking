@@ -71,15 +71,17 @@ const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness,
     return (
         <div>
             {(isLoading) ? <div></div> :
-                <div style={{ width: "950px" }}>
-                    <div style={{ overflow: "hidden", margin: "auto" }}>
-                        <div style={{ width: "375px", float: "left", marginLeft: "125px" }}>
-                            <img src={images[imageIndex][0]} alt="not found" height="500px"
-                                width="400px" />
-                        </div>
-                        <div>
-                            <img src={images[imageIndex + 1][0]} alt="not found" height="500px"
-                                width="400px" />
+                <div>
+                    <div style={{ display: "table", margin: "auto" }}>
+                        <div style={{ display: "table-row" }}>
+                            <div style={{ display: "table-cell" }}>
+                                <img src={images[imageIndex][0]} alt="not found" height="500px"
+                                    width="400px" />
+                            </div>
+                            <div style={{ display: "table-cell" }}>
+                                <img src={images[imageIndex + 1][0]} alt="not found" height="500px"
+                                    width="400px" />
+                            </div>
                         </div>
                     </div>
                     <div style={{ width: "700px", marginLeft: "170px" }}>

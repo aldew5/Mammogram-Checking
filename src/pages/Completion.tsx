@@ -77,7 +77,7 @@ const Completion = ({ user, sureness, willingness, images, ratings,
     }, []);
 
     return (
-        <div style={{ paddingTop: "50px" }}>
+        <div style={{ paddingTop: "50px", margin: "auto" }}>
             <div className={styles.text}>
                 <div>
                     <h1>Thank you for completing the experiment!</h1>
@@ -85,7 +85,8 @@ const Completion = ({ user, sureness, willingness, images, ratings,
                         you rated them {cancerScores[0]}, {cancerScores[1]}.
                     </p>
                     <p>
-                        Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
+                        Here is a scatterplot of your willingness to triage an image as 
+                        a function of its AI rating:
                     </p>
                 </div>
                 <div style={{ display: "table", paddingLeft: "30px" }}>

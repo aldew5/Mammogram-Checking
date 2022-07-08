@@ -126,10 +126,11 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                         </div> : <></>
                     }
                     <div style={{
-                        marginBottom: "2rem", marginLeft: "150px",
-                        paddingTop: "2rem", marginRight: "150px"
+                        marginBottom: "2rem", marginLeft: "15%",
+                        paddingTop: "2rem", marginRight: "15%",
+                        maxWidth: "900px"
                     }}>
-                        <div style={{ width: "100%" }}>
+                        <div>
                             {(displayWilling) ?
                                 <div>
                                     <div style={{ marginBottom: "2rem" }}>
