@@ -71,16 +71,18 @@ const Mammogram = ({ imageIndex, index, images, sureness, ratings, setSureness,
     return (
         <div>
             {(isLoading) ? <div></div> :
-                <div style={{width: "950px"}}>
+                <div style={{ width: "950px" }}>
                     <div style={{ overflow: "hidden", margin: "auto" }}>
-                        <div style={{ width: "300px", float: "left", marginLeft: "125px" }}>
-                            <img src={images[imageIndex][0]} alt="not found" height="500px" />
+                        <div style={{ width: "375px", float: "left", marginLeft: "125px" }}>
+                            <img src={images[imageIndex][0]} alt="not found" height="500px"
+                                width="400px" />
                         </div>
                         <div>
-                            <img src={images[imageIndex + 1][0]} alt="not found" height="500px" />
+                            <img src={images[imageIndex + 1][0]} alt="not found" height="500px"
+                                width="400px" />
                         </div>
                     </div>
-                    <div style={{ width: "700px", marginLeft: "150px" }}>
+                    <div style={{ width: "700px", marginLeft: "170px" }}>
                         <div style={{ marginBottom: "2rem", marginTop: "1rem" }}>
                             <h3>How sure are you that these images are from the normal case?</h3>
                         </div>
