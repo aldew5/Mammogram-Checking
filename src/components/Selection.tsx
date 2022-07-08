@@ -133,7 +133,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
                             {(displayWilling) ?
                                 <div>
                                     <div style={{ marginBottom: "2rem" }}>
-                                        <h3>How sure are you that these images are from the normal case?</h3>
+                                        <h3>How sure are you that these images are from a normal case?</h3>
                                     </div>
                                     <Box>
                                         <Slider

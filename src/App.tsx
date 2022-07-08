@@ -30,7 +30,7 @@ function App() {
     email: ""
   });
 
-  const num_cancers = 1;
+  const num_cancers = 6;
 
   return (
     <Router>

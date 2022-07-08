@@ -20,6 +20,12 @@ const scatterOptions = {
     vAxis: { title: 'Willingness', minValue: 0, maxValue: 11 },
     legend: 'none',
 }
+const secondScatterOptions = {
+    title: 'Willingness vs. Reader\'s Rating',
+    hAxis: { title: 'Reader\s Rating', minValue: 0, maxValue: 11 },
+    vAxis: { title: 'Willingness', minValue: 0, maxValue: 11 },
+    legend: 'none',
+}
 
 const Completion = ({ user, sureness, willingness, images, ratings,
     num_cancers, cancerScores }: CompletionProps) => {
@@ -38,7 +44,7 @@ const Completion = ({ user, sureness, willingness, images, ratings,
         });
     }
 
-    function prepareData(user: User, sureness: number[],
+    function prepareWillingnessData(user: User, sureness: number[],
         willingness: number[], images: any[][]): string[][] {
 
         let data: string[][] = [["ID", "Age", "Gender", "Location", "Specialty", "Mammo Number",
@@ -57,11 +63,15 @@ const Completion = ({ user, sureness, willingness, images, ratings,
         return data;
     }
 
-    let scatterData: any[][] = [['AI Rating', 'Willingness']];
+    let firstScatterData: any[][] = [['AI Rating', 'Willingness']];
+    let secondScatterData: any[][] = [["Willingness", "Reader's Rating"]]
 
     useEffect(() => {
         for (let i = 0; i < ratings.length; i++) {
-            scatterData.push([ratings[i], willingness[i]]);
+            firstScatterData.push([ratings[i], willingness[i]]);
+        }
+        for (let i = 0; i < willingness.length; i++) {
+            secondScatterData.push([willingness[i], sureness[i]]);
         }
         completeTrials();
     }, []);
@@ -78,20 +88,35 @@ const Completion = ({ user, sureness, willingness, images, ratings,
                         Here is a scatterplot of your willingness to triage an image as a function of its AI rating:
                     </p>
                 </div>
-                <div style={{ paddingLeft: "150px" }}>
-                    <Chart
-                        width={'700px'}
-                        height={'420px'}
-                        chartType="ScatterChart"
-                        loader={<div>Loading Chart</div>}
-                        data={scatterData}
-                        options={scatterOptions}
-                        rootProps={{ 'data-testid': '1' }}
-                    />
+                <div style={{ display: "table", paddingLeft: "30px" }}>
+                    <div style={{ display: "table-row" }}>
+                        <div style={{ display: "table-cell" }}>
+                            <Chart
+                                width={'550px'}
+                                height={'420px'}
+                                chartType="ScatterChart"
+                                loader={<div>Loading Chart</div>}
+                                data={firstScatterData}
+                                options={scatterOptions}
+                                rootProps={{ 'data-testid': '1' }}
+                            />
+                        </div>
+                        <div style={{ display: "table-cell" }}>
+                            <Chart
+                                width={'550px'}
+                                height={'420px'}
+                                chartType="ScatterChart"
+                                loader={<div>Loading Chart</div>}
+                                data={secondScatterData}
+                                options={secondScatterOptions}
+                                rootProps={{ 'data-testid': '1' }}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
             <CSVLink
-                data={prepareData(user, sureness, willingness, images)}
+                data={prepareWillingnessData(user, sureness, willingness, images)}
                 filename={`${user.id}.csv`}>
                 Export to CSV
             </CSVLink>
