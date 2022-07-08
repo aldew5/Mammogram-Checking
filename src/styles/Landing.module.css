@@ -1,5 +1,4 @@
 .main {
-    padding: 50px;
     margin: 0 auto;
-    padding-left: 400px;
+    max-width: 600px;
 }

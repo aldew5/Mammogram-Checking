@@ -53,7 +53,7 @@ const Experiment = ({ willingnessList, surenessList, images, ratings,
                         />
                     </div>
                     :
-                    <div>
+                    <div style={{ margin: "auto" }}>
                         <Selection
                             setDisplayImage={setDisplayImage}
                             willingnessList={willingnessList}

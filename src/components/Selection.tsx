@@ -115,7 +115,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     return (
         <div>
             {(clicked) ?
-                <div style={{ position: "absolute" }}>
+                <div style={{ margin: 'auto' }}>
                     <EscapeCard setClicked={setClicked} />
                 </div>
                 :

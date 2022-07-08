@@ -8,9 +8,9 @@
 
 .main {
     align-content: center;
-    margin-left: 220px;
+    margin: auto;
     margin-top: 50px;
+    max-width: 1000px;
     text-align: center;
-    margin-right: 220px;
     background-color: white;
 }
