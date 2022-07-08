@@ -44,11 +44,11 @@ const Completion = ({ user, sureness, willingness, images, ratings,
         });
     }
 
-    function prepareWillingnessData(user: User, sureness: number[],
-        willingness: number[], images: any[][]): string[][] {
+    function prepareData(user: User, sureness: number[],
+        willingness: number[], images: any[][], ratings: number[]): string[][] {
 
         let data: string[][] = [["ID", "Age", "Gender", "Location", "Specialty", "Mammo Number",
-            "Screening Number", "Years", "Setting", "Program", "Models", "Email", "Case",
+            "Screening Number", "Years", "Setting", "Program", "Models", "Email", "Case", "AI Rating",
             "Willingness", "Sureness"]]
 
         let image_cnt: number = 0;
@@ -56,7 +56,7 @@ const Completion = ({ user, sureness, willingness, images, ratings,
         for (let i = 0; i < sureness.length; i++) {
             data.push([user.id, user.age, user.gender, user.location, user.specialty, user.mammo_number,
             user.screening_number, user.years, user.setting, user.program, user.models, user.email,
-            images[image_cnt][1], String(sureness[i]), String(willingness[i])]);
+            images[image_cnt][1], String(ratings[i]), String(sureness[i]), String(willingness[i])]);
 
             image_cnt += 2;
         }
@@ -116,7 +116,7 @@ const Completion = ({ user, sureness, willingness, images, ratings,
                 </div>
             </div>
             <CSVLink
-                data={prepareWillingnessData(user, sureness, willingness, images)}
+                data={prepareData(user, sureness, willingness, images, ratings)}
                 filename={`${user.id}.csv`}>
                 Export to CSV
             </CSVLink>
