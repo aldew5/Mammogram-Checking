@@ -85,8 +85,9 @@ const Completion = ({ user, sureness, willingness, images, ratings,
                         you rated them {cancerScores[0]}, {cancerScores[1]}.
                     </p>
                     <p>
-                        Here is a scatterplot of your willingness to triage an image as 
-                        a function of its AI rating:
+                        The following charts show your willingness to triage an image as a function <br/>
+                        of its AI rating and your willingness to triage as a function of your own
+                        rating:
                     </p>
                 </div>
                 <div style={{ display: "table", paddingLeft: "30px" }}>
