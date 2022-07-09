@@ -19,6 +19,7 @@ interface SelectionProps {
     setSureness: Dispatch<SetStateAction<number>>;
     setWillingness: Dispatch<SetStateAction<number>>;
     setCancerScores: Dispatch<SetStateAction<number[]>>;
+    setTrialCount: Dispatch<SetStateAction<number>>;
     sureness: number;
     willingness: number;
     willingnessList: number[];
@@ -28,6 +29,7 @@ interface SelectionProps {
     images: any[];
     imageIndex: number;
     cancerScores: number[];
+    trialCount: number;
 }
 
 interface Mark {
@@ -37,12 +39,13 @@ interface Mark {
 
 const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
     willingnessList, surenessList, index, length, willingness, setWillingness,
-    sureness, setSureness, imageIndex, images, cancerScores, setCancerScores }: SelectionProps) => {
+    sureness, setSureness, imageIndex, images, cancerScores, setCancerScores,
+    setTrialCount, trialCount }: SelectionProps) => {
 
     const navigate = useNavigate();
     const [displayWilling, setDisplayWilling] = useState<boolean>(true);
     const [clicked, setClicked] = useState<boolean>(false);
-        
+
     function valueText(value: number) {
         return `${value}`
     }
@@ -55,7 +58,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
             navigate("/completion");
         }
     }
-    
+
     // handle change for the first slider
     const handleChange1 = (event: Event, new_value: number | number[]) => {
         if (Array.isArray(new_value)) {
@@ -100,6 +103,7 @@ const Selection = ({ setDisplayImage, setSurenessList, setWillingnessList,
             cancers.push(sureness);
             setCancerScores(cancers);
         }
+        setTrialCount(trialCount + 1);
         // we've gone through all the images so terminate
         // the experiment
         if (index >= length) {

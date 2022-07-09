@@ -25,6 +25,7 @@ const Experiment = ({ willingnessList, surenessList, images, ratings,
     const [willingness, setWillingness] = useState<number>(5);
     const [sureness, setSureness] = useState<number>(4);
     const [imageIndex, setImageIndex] = useState<number>(0);
+    const [trialCount, setTrialCount] = useState<number>(1);
 
     useEffect(() => {
         // display images for 5 seconds
@@ -38,6 +39,9 @@ const Experiment = ({ willingnessList, surenessList, images, ratings,
 
     return (
         <div className={styles.container}>
+            <div style={{ float: "left", marginLeft: "50px", color: "white" }}>
+                <h4>Trial: {trialCount}</h4>
+            </div>
             <div>
                 {(displayImage) ?
                     <div className={styles.image}>
@@ -70,7 +74,9 @@ const Experiment = ({ willingnessList, surenessList, images, ratings,
                             imageIndex={imageIndex}
                             images={images}
                             setCancerScores={setCancerScores}
+                            setTrialCount={setTrialCount}
                             cancerScores={cancerScores}
+                            trialCount={trialCount}
                         />
                     </div>
                 }
